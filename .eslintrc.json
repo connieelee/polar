@@ -4,5 +4,12 @@
     "expect": false,
     "describe": false,
     "test": false
+  },
+  "extends": "airbnb",
+  "rules": {
+    "semi":"off",
+    "linebreak-style":"off",
+    "react/jsx-filename-extension": [1, {"extensions": [".js", ".jsx"]}],
+    "react/prop-types": [0]
   }
 }
