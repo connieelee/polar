@@ -17,3 +17,4 @@
 ### Storybook
 - `yarn run storybook`
 - In another terminal window, `react-native run-ios`
+- In the simulator hit `cmd+d` and ensure that hot reloading is disabled and live reload is enabled
