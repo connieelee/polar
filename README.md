@@ -13,3 +13,7 @@
 - When the build is complete, `npm run start-dev` to start it up with devtools
 - When the simulator shows up, make sure to `cmd+d` and debug JS remotely
 - 🎉
+
+### Storybook
+- `yarn run storybook`
+- In another terminal window, `react-native run-ios`
