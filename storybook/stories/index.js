@@ -27,3 +27,5 @@ storiesOf('Button', module)
       <Text>😀 😎 👍 💯</Text>
     </Button>
   );
+
+require('./atoms')

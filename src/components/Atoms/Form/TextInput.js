@@ -6,7 +6,10 @@ import {
 
 const styles = StyleSheet.create({
   textInput: {
-    borderRadius: 3,
+    borderBottomWidth: 3,
+    height: 50,
+    width: 300,
+    padding: 2,
   },
 })
 
