@@ -9,9 +9,14 @@ import {
   TextInput,
 } from '../../Atoms'
 
+const styles = StyleSheet.create({
+})
+
 export default props => (
   <View>
-    <FormLabel>{props.label}</FormLabel>
+    <View>
+      <FormLabel>{props.label}</FormLabel>
+    </View>
     <TextInput />
   </View>
 )
