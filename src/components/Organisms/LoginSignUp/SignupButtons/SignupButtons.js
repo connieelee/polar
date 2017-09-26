@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
 export default () => (
   <View style={styles.parent}>
-    <FormButton>Sign Up</FormButton>
+    <FormButton>Log In</FormButton>
     <FormButton>Submit</FormButton>
   </View>
 )
