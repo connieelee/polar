@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  StyleSheet,
   View,
 } from 'react-native'
 
@@ -9,14 +8,9 @@ import {
   TextInput,
 } from '../../Atoms'
 
-const styles = StyleSheet.create({
-})
-
 export default props => (
   <View>
-    <View>
-      <FormLabel>{props.label}</FormLabel>
-    </View>
+    <FormLabel>{props.label}</FormLabel>
     <TextInput />
   </View>
 )
