@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   View,
+  StyleSheet,
 } from 'react-native'
 
 import {
@@ -8,8 +9,14 @@ import {
   TextInput,
 } from '../../Atoms'
 
+const styles = StyleSheet.create({
+  inputWrapper: {
+    marginVertical: 20,
+  },
+})
+
 export default props => (
-  <View>
+  <View style={styles.inputWrapper}>
     <FormLabel>{props.label}</FormLabel>
     <TextInput />
   </View>
