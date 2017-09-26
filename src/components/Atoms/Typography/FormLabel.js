@@ -4,10 +4,13 @@ import {
   StyleSheet,
 } from 'react-native'
 
+import gStyles from '../../styles'
+
 const styles = StyleSheet.create({
   text: {
-    fontWeight: '300',
-    fontSize: 22,
+    fontWeight: '600',
+    fontSize: 18,
+    color: gStyles.colors.primary,
   },
 })
 
