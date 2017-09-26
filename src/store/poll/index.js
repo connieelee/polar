@@ -1,5 +1,8 @@
 import { database } from '../../../firebase'
 
+const defaultState = { loading: false }
+const loadingState = { loading: true }
+
 const CREATE_POLL = 'CREATE_POLL'
 const READ_POLL = 'READ_POLL'
 const UPDATE_POLL = 'UPDATE_POLL'
@@ -17,4 +20,19 @@ export const getPoll = dispatch =>
     'value',
     snap => dispatch(readPoll(snap.val())),
   )
+
+export default (state = defaultState, action) => {
+  switch (action.type) {
+    case CREATE_POLL:
+    case READ_POLL:
+    case UPDATE_POLL:
+      return action.poll
+    case DELETE_POLL:
+      return defaultState
+    case POLL_REQUESTED:
+      return loadingState
+    default:
+      return state
+  }
+}
 
