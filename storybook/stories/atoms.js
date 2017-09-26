@@ -3,7 +3,8 @@ import { storiesOf } from '@storybook/react-native'
 
 import {
   TextInput,
-} from '../../src/components'
+  FormLabel,
+} from '../../src/components/Atoms'
 import CenterView from './CenterView'
 
 storiesOf('Atoms/Form', module)
@@ -15,3 +16,4 @@ storiesOf('Atoms/Form', module)
   .add('TextInput', () => (
     <TextInput />
   ))
+  .add('FormLabel', () => <FormLabel>Label</FormLabel>)
