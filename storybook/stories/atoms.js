@@ -5,6 +5,7 @@ import {
   TextInput,
   FormLabel,
   FormButton,
+  BodyText,
 } from '../../src/components/Atoms'
 import CenterView from './CenterView'
 
@@ -24,4 +25,5 @@ storiesOf('Atoms/Form', module)
 
 storiesOf('Atoms/Typography', module)
   .add('FormLabel', () => <FormLabel>Label</FormLabel>)
+  .add('BodyText', () => <BodyText>Body Text</BodyText>)
 

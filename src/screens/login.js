@@ -4,6 +4,4 @@ import {
   BodyText,
 } from '../components'
 
-export default () => (
-  <BodyText>Welcome to Polar!</BodyText>
-)
+export default () => <BodyText>Login</BodyText>
