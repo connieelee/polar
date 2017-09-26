@@ -20,8 +20,6 @@ const styles = StyleSheet.create({
 
 export default () => (
   <View style={styles.parent}>
-    <LabelledInput label="Email" />
-    <LabelledInput label="Password" />
     <View style={styles.horizontal}>
       <FormButton>Sign Up</FormButton>
       <FormButton>Log In</FormButton>
