@@ -3,9 +3,15 @@
 import { AppRegistry } from 'react-native';
 import { getStorybookUI, configure } from '@storybook/react-native';
 
+import { loadStories } from './storyLoader'
+
+// const req = require.context('../src/components', true, /\.stories\.js$/)
+// const loadStories = () => req.keys().forEach(fileName => req(fileName))
+
 // import stories
 configure(() => {
-  require('./stories');
+  loadStories()
+  // require('./stories');
 }, module);
 
 // This assumes that storybook is running on the same host as your RN packager,

@@ -7,7 +7,7 @@ import {
 import {
   FormLabel,
   TextInput,
-} from '../../Atoms'
+} from '../../../Atoms'
 
 const styles = StyleSheet.create({
   inputWrapper: {

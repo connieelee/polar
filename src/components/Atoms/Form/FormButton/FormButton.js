@@ -5,7 +5,7 @@ import {
   Text,
 } from 'react-native'
 
-import gStyles from '../../styles'
+import gStyles from '../../../styles'
 
 const styles = StyleSheet.create({
   button: {

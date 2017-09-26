@@ -5,7 +5,7 @@ import {
 
 import {
   LabelledInput,
-} from '../../components'
+} from '../../../components'
 
 export default () => (
   <View>
