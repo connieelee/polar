@@ -1,25 +1,3 @@
-import React, { Component } from 'react';
-import { AppRegistry, Text, View } from 'react-native';
+import { Navigation } from 'react-native-navigation'
 
-import styles from './styles';
-
-export default class Polar extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
-        </Text>
-      </View>
-    );
-  }
-}
-
-AppRegistry.registerComponent('polar', () => Polar);
+import { registerScreens } from './src/screens'
