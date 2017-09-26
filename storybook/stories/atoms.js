@@ -4,6 +4,7 @@ import { storiesOf, addDecorator } from '@storybook/react-native'
 import {
   TextInput,
   FormLabel,
+  FormButton,
 } from '../../src/components/Atoms'
 import CenterView from './CenterView'
 
@@ -17,6 +18,10 @@ storiesOf('Atoms/Form', module)
   .add('TextInput', () => (
     <TextInput />
   ))
+  .add('FormButton', () => (
+    <FormButton>Click Me!</FormButton>
+  ))
 
 storiesOf('Atoms/Typography', module)
   .add('FormLabel', () => <FormLabel>Label</FormLabel>)
+
