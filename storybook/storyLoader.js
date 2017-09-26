@@ -11,7 +11,7 @@ function loadStories() {
   require('../src/components/Atoms/Typography/BodyText/BodyText.stories.js');
   require('../src/components/Atoms/Typography/FormLabel/FormLabel.stories.js');
   require('../src/components/Molecules/Form/LabelledInput/LabelledInput.stories.js');
-  require('../src/components/Organisms/LoginInputs/LoginInputs.stories.js');
+  require('../src/components/Organisms/LoginSignUp/LoginInputs/LoginInputs.stories.js');
   
 }
 
