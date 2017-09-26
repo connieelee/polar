@@ -1,5 +1,5 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react-native'
+import { storiesOf, addDecorator } from '@storybook/react-native'
 
 import {
   TextInput,
@@ -7,13 +7,16 @@ import {
 } from '../../src/components/Atoms'
 import CenterView from './CenterView'
 
+addDecorator(story => (
+  <CenterView>
+    {story()}
+  </CenterView>
+))
+
 storiesOf('Atoms/Form', module)
-  .addDecorator(story => (
-    <CenterView>
-      {story()}
-    </CenterView>
-  ))
   .add('TextInput', () => (
     <TextInput />
   ))
+
+storiesOf('Atoms/Typography', module)
   .add('FormLabel', () => <FormLabel>Label</FormLabel>)
