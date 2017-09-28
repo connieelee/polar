@@ -31,13 +31,11 @@ export const getHash = async () => {
 const convertMinutesToMS = minutes =>
   minutes * 60 * 1000
 
-const generateDefaultOptions = () => {
-  const defaultDelay = 15
-  return {
-    endTime: Date.now() + convertMinutesToMS(defaultDelay),
-    open: false,
-  }
-}
+const generateDefaultOptions = (delayMin = 15, open = false) => ({
+  endTime: Date.now() + convertMinutesToMS(delayMin),
+  open,
+})
+
 
 export default {
   createPoll: async () => {
