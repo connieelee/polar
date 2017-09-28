@@ -1,4 +1,5 @@
 import { database } from '../../../firebase'
+import utilities from './utilities'
 
 const defaultState = { loading: false }
 const loadingState = { loading: true }
@@ -39,11 +40,16 @@ export const putPoll = (pollRef, updatedPoll) =>
       .then(() => dispatch(updatePoll(updatedPoll)))
       .catch(error => dispatch(pollError(error)))
 
-export const postPoll = () =>
-  (dispatch) => {
-    database.ref('/polls').set()
+export const generateAndPostPoll = () =>
+  async (dispatch) => {
+    dispatch(requestPoll())
+    const createdPoll = await utilities.createPoll()
+    if (createdPoll instanceof Error) {
+      dispatch(pollError(createdPoll))
+    } else {
+      dispatch(readPoll(createdPoll))
+    }
   }
-
 
 export default (state = defaultState, action) => {
   switch (action.type) {
