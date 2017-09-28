@@ -7,19 +7,19 @@ const CREATE_POLL = 'CREATE_POLL'
 const READ_POLL = 'READ_POLL'
 const UPDATE_POLL = 'UPDATE_POLL'
 const DELETE_POLL = 'DELETE_POLL'
-const POLL_REQUESTED = 'POLL_REQUESTED'
+const REQUEST_POLL = 'REQUEST_POLL'
 const POLL_ERROR = 'POLL_ERROR'
 
 export const createPoll = poll => ({ type: CREATE_POLL, poll })
 export const readPoll = poll => ({ type: READ_POLL, poll })
 export const updatePoll = poll => ({ type: UPDATE_POLL, poll })
 export const deletePoll = () => ({ type: DELETE_POLL })
-export const pollRequested = () => ({ type: POLL_REQUESTED })
+export const requestPoll = () => ({ type: REQUEST_POLL })
 export const pollError = error => ({ type: POLL_ERROR, error })
 
 export const getPoll = pollId =>
   (dispatch) => {
-    dispatch(pollRequested())
+    dispatch(requestPoll())
     database.ref(`/polls${pollId}`).once(
       'value',
       snap => dispatch(readPoll(Object.assign(snap.val(), { pollRef: snap }))),
@@ -27,11 +27,16 @@ export const getPoll = pollId =>
   }
 
 export const destroyPoll = pollRef =>
-  (dispatch) => {
+  dispatch =>
     pollRef.set(null)
       .then(() => dispatch(deletePoll()))
       .catch(error => dispatch(pollError(error)))
-  }
+
+export const putPoll = (pollRef, updatedPoll) =>
+  dispatch =>
+    pollRef.set(updatedPoll)
+      .then(() => dispatch(updatePoll(updatedPoll)))
+      .catch(error => dispatch(pollError(error)))
 
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -41,7 +46,7 @@ export default (state = defaultState, action) => {
       return action.poll
     case DELETE_POLL:
       return defaultState
-    case POLL_REQUESTED:
+    case REQUEST_POLL:
       return loadingState
     case POLL_ERROR:
       return action.error
