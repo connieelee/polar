@@ -20,9 +20,10 @@ export const pollError = error => ({ type: POLL_ERROR, error })
 export const getPoll = pollId =>
   (dispatch) => {
     dispatch(requestPoll())
-    database.ref(`/polls${pollId}`).once(
+    const pollRef = database.ref(`/polls/${pollId}`)
+    pollRef.once(
       'value',
-      snap => dispatch(readPoll(Object.assign(snap.val(), { pollRef: snap }))),
+      snap => dispatch(readPoll(Object.assign(snap.val(), { pollRef }))),
     )
   }
 
@@ -37,6 +38,12 @@ export const putPoll = (pollRef, updatedPoll) =>
     pollRef.set(updatedPoll)
       .then(() => dispatch(updatePoll(updatedPoll)))
       .catch(error => dispatch(pollError(error)))
+
+export const postPoll = () =>
+  (dispatch) => {
+    database.ref('/polls').set()
+  }
+
 
 export default (state = defaultState, action) => {
   switch (action.type) {
