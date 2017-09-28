@@ -43,13 +43,9 @@ export default {
   createPoll: async () => {
     try {
       const hash = await getHash()
-      const defaultOptions = generateDefaultOptions()
-      const toPush = Object.assign(
-        defaultOptions,
-        {
-          [hash]: 'sad',
-        },
-      )
+      const toPush = {
+        [hash]: generateDefaultOptions(),
+      }
       return await database.ref('/polls').update(toPush)
     } catch (error) {
       return error
