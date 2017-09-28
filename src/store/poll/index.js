@@ -22,8 +22,7 @@ export const getPoll = pollId =>
   async (dispatch) => {
     dispatch(requestPoll())
     try {
-      const pollRef = database.ref(`/polls/${pollId}`)
-      const pollSnap = await pollRef.once('value')
+      const pollSnap = await database.ref(`/polls/${pollId}`).once('value')
       const pollVal = pollSnap.val()
       dispatch(readPoll(pollVal))
     } catch (error) {

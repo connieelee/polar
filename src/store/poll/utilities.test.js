@@ -36,9 +36,14 @@ describe('Utilities', () => {
   describe('getHash', () => {
     test('generates a valid hash', async () => {
       const hash = await utilities.getHash()
-      await defaultUtilities.createPoll()
       expect(hash.toString().length).toBe(4)
       expect(typeof hash).toBe('number')
+    })
+    test('general testing', async () => {
+      const pollRef = database.ref('/polls/3324')
+      const pollSnap = await pollRef.once('value')
+      const pollVal = pollSnap.val()
+      console.log(pollVal, 'pollVal')
     })
   })
 })
