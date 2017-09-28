@@ -15,14 +15,19 @@ export const updatePoll = poll => ({ type: UPDATE_POLL, poll })
 export const deletePoll = () => ({ type: DELETE_POLL })
 export const pollRequested = () => ({ type: POLL_REQUESTED })
 
-export const getPoll = (dispatch) => {
-  dispatch(pollRequested())
-  database.ref('/polls').once(
-    'value',
-    snap => dispatch(readPoll(snap.val())),
-  )
-}
+export const getPoll = pollId =>
+  (dispatch) => {
+    dispatch(pollRequested())
+    database.ref(`/polls${pollId}`).once(
+      'value',
+      snap => dispatch(readPoll(Object.assign(snap.val(), { pollRef: snap }))),
+    )
+  }
 
+export const destroyPoll = pollId =>
+  (dispatch) => {
+    disp
+  }
 export default (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_POLL:
