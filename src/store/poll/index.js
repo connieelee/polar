@@ -33,6 +33,7 @@ export const getPoll = pollId =>
 
 export const destroyPoll = pollRef =>
   async (dispatch) => {
+    dispatch(requestPoll())
     try {
       await pollRef.set(null)
       dispatch(deletePoll())
@@ -67,7 +68,7 @@ export default (state = defaultState, action) => {
     case CREATE_POLL:
     case READ_POLL:
     case UPDATE_POLL:
-      return action.poll
+      return Object.assign(state, action.poll)
     case DELETE_POLL:
       return defaultState
     case REQUEST_POLL:
