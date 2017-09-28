@@ -32,6 +32,7 @@ describe('Utilities', () => {
       expect(utilities.objectNotEmpty({})).toBe(false)
     })
   })
+
   describe('getHash', () => {
     test('generates a valid hash', async () => {
       const hash = await utilities.getHash()

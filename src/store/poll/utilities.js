@@ -27,11 +27,11 @@ export const getHash = async () => {
 
 export default {
   createPoll: async () => {
-    const hash = await getHash()
-    const toPush = {
-      [hash]: 'sad',
-    }
     try {
+      const hash = await getHash()
+      const toPush = {
+        [hash]: 'sad',
+      }
       return await database.ref('/polls').update(toPush)
     } catch (error) {
       return error
