@@ -8,12 +8,14 @@ const READ_POLL = 'READ_POLL'
 const UPDATE_POLL = 'UPDATE_POLL'
 const DELETE_POLL = 'DELETE_POLL'
 const POLL_REQUESTED = 'POLL_REQUESTED'
+const POLL_ERROR = 'POLL_ERROR'
 
 export const createPoll = poll => ({ type: CREATE_POLL, poll })
 export const readPoll = poll => ({ type: READ_POLL, poll })
 export const updatePoll = poll => ({ type: UPDATE_POLL, poll })
 export const deletePoll = () => ({ type: DELETE_POLL })
 export const pollRequested = () => ({ type: POLL_REQUESTED })
+export const pollError = error => ({ type: POLL_ERROR, error })
 
 export const getPoll = pollId =>
   (dispatch) => {
@@ -24,9 +26,11 @@ export const getPoll = pollId =>
     )
   }
 
-export const destroyPoll = pollId =>
+export const destroyPoll = pollRef =>
   (dispatch) => {
-    disp
+    pollRef.set(null)
+      .then(() => dispatch(deletePoll()))
+      .catch(err => console.error(err))
   }
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -38,6 +42,8 @@ export default (state = defaultState, action) => {
       return defaultState
     case POLL_REQUESTED:
       return loadingState
+    case POLL_ERROR:
+      return action.error
     default:
       return state
   }
