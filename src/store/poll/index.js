@@ -30,8 +30,9 @@ export const destroyPoll = pollRef =>
   (dispatch) => {
     pollRef.set(null)
       .then(() => dispatch(deletePoll()))
-      .catch(err => console.error(err))
+      .catch(error => dispatch(pollError(error)))
   }
+
 export default (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_POLL:
