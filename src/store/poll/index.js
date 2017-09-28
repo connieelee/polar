@@ -19,26 +19,37 @@ export const requestPoll = () => ({ type: REQUEST_POLL })
 export const pollError = error => ({ type: POLL_ERROR, error })
 
 export const getPoll = pollId =>
-  (dispatch) => {
+  async (dispatch) => {
     dispatch(requestPoll())
-    const pollRef = database.ref(`/polls/${pollId}`)
-    pollRef.once(
-      'value',
-      snap => dispatch(readPoll(Object.assign(snap.val(), { pollRef }))),
-    )
+    try {
+      const pollRef = database.ref(`/polls/${pollId}`)
+      const pollSnap = await pollRef.once('value')
+      const pollVal = pollSnap.val()
+      dispatch(readPoll(pollVal))
+    } catch (error) {
+      dispatch(pollError(error))
+    }
   }
 
 export const destroyPoll = pollRef =>
-  dispatch =>
-    pollRef.set(null)
-      .then(() => dispatch(deletePoll()))
-      .catch(error => dispatch(pollError(error)))
+  async (dispatch) => {
+    try {
+      await pollRef.set(null)
+      dispatch(deletePoll())
+    } catch (error) {
+      dispatch(pollError(error))
+    }
+  }
 
 export const putPoll = (pollRef, updatedPoll) =>
-  dispatch =>
-    pollRef.set(updatedPoll)
-      .then(() => dispatch(updatePoll(updatedPoll)))
-      .catch(error => dispatch(pollError(error)))
+  async (dispatch) => {
+    try {
+      await pollRef.set(updatedPoll)
+      dispatch(updatePoll(updatedPoll))
+    } catch (error) {
+      dispatch(pollError(error))
+    }
+  }
 
 export const generateAndPostPoll = () =>
   async (dispatch) => {
