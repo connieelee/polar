@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native'
 
 import LabelledInput from './LabelledInput'
 
-storiesOf('Molecule/LabelledInput', module)
+storiesOf('Molecules/LabelledInput', module)
   .add('LabelledInput', () => (
     <LabelledInput label="label" />
   ))
