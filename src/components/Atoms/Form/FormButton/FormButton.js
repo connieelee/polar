@@ -5,15 +5,18 @@ import {
   Text,
 } from 'react-native'
 
-import gStyles from '../../styles'
+import gStyles from '../../../styles'
 
 const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
     borderColor: gStyles.colors.primary,
-    paddingVertical: 20,
-    paddingHorizontal: 40,
+    paddingVertical: 10,
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
     borderRadius: 20,
+    marginHorizontal: 10,
   },
   buttonText: {
     fontSize: 22,

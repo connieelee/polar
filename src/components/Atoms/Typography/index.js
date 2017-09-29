@@ -1,2 +1,2 @@
-export { default as FormLabel } from './FormLabel'
-export { default as BodyText } from './BodyText'
+export { default as FormLabel } from './FormLabel/FormLabel'
+export { default as BodyText } from './BodyText/BodyText'

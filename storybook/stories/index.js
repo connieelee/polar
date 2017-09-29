@@ -1,2 +1,0 @@
-require('./atoms')
-require('./molecules')

@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
   },
 })
 
-export default () => (
+export default props => (
   <View style={styles.inputContainer}>
-    <TextInput style={styles.textInput} />
+    <TextInput {...props} style={styles.textInput} />
   </View>
 )
