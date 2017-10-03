@@ -6,7 +6,7 @@ import {
 
 import gStyle from '../../../styles'
 
-const size = 180
+const size = 160
 
 export default (props) => {
   const styles = StyleSheet.create({
@@ -21,6 +21,11 @@ export default (props) => {
   })
 
   return (
-    <TouchableOpacity style={styles.shape}>{props.children}</TouchableOpacity>
+    <TouchableOpacity
+      onPress={props.onPress}
+      style={styles.shape}
+    >
+      {props.children}
+    </TouchableOpacity>
   )
 }
