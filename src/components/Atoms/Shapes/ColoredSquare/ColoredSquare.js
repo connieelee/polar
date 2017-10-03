@@ -13,6 +13,8 @@ export default (props) => {
       alignItems: 'center',
       justifyContent: 'center',
       flex: 1,
+      marginHorizontal: props.marginHorizontal ? props.marginHorizontal : 0,
+      marginVertical: props.marginVertical ? props.marginVertical : 0,
     },
   })
 
