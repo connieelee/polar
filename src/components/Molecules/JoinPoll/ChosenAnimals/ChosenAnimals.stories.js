@@ -9,11 +9,13 @@ const animals = [
     id: 1,
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg',
     backgroundColor: gStyles.colors.primary,
+    order: 1,
   },
   {
     id: 2,
     imageUrl: 'http://dfp3r41v9wmfi.cloudfront.net/wp-content/uploads/Information_page.jpg',
     backgroundColor: gStyles.colors.green,
+    order: 2,
   },
 ]
 

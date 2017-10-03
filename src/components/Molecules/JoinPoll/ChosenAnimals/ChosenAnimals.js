@@ -25,7 +25,7 @@ export default (props) => {
     <View style={styles.parent}>
       {
         props.animals.map(animal => (
-          <ColoredSquare backgroundColor={animal.backgroundColor}>
+          <ColoredSquare key={animal.order} backgroundColor={animal.backgroundColor}>
             <Image source={{ uri: animal.imageUrl }} />
           </ColoredSquare>
         ))
