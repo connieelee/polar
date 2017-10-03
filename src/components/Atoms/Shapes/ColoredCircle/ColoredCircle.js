@@ -17,6 +17,7 @@ export default (props) => {
       height: size,
       width: size,
       borderRadius: 300,
+      margin: 10,
     },
   })
 

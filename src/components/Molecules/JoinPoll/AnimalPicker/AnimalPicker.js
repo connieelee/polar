@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 
 import {
-  ColoredSquare,
+  ColoredCircle,
 } from '../../../../components'
 import gStyles from '../../../styles'
 
@@ -14,6 +14,8 @@ import gStyles from '../../../styles'
 const styles = StyleSheet.create({
   parent: {
     flex: 1,
+    flexDirection: 'row',
+    flexWrap: 'wrap',
   },
 })
 
@@ -21,7 +23,7 @@ export default () => (
   <View style={styles.parent}>
     {
       Object.values(gStyles.colors).map(color => (
-        <ColoredSquare backgroundColor={color} />
+        <ColoredCircle backgroundColor={color} />
       ))
     }
   </View>
