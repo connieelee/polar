@@ -23,7 +23,7 @@ export default () => (
   <View style={styles.parent}>
     {
       Object.values(gStyles.colors).map(color => (
-        <ColoredCircle backgroundColor={color} />
+        <ColoredCircle key={color} backgroundColor={color} />
       ))
     }
   </View>
