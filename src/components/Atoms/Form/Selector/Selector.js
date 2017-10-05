@@ -5,6 +5,8 @@ import {
   Text,
 } from 'react-native'
 
+import gStyles from '../../../styles'
+
 const styles = StyleSheet.create({
   parent: {
     height: 50,
@@ -15,14 +17,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  selected: {
+  parentSelected: {
+    borderColor: gStyles.colors.primary,
+  },
+  text: {
     fontSize: 30,
     fontWeight: '700',
+  },
+  textSelected: {
+    color: gStyles.colors.primary,
   },
 })
 
 export default props => (
-  <TouchableOpacity onPress={props.onPress} style={styles.parent}>
-    {props.selected && <Text style={styles.selected}>X</Text>}
+  <TouchableOpacity
+    onPress={props.onPress}
+    style={[styles.parent, props.selected && styles.parentSelected]}
+  >
+    {props.selected && <Text style={[styles.text, props.selected && styles.textSelected]}>X</Text>}
   </TouchableOpacity>
 )
