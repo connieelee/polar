@@ -17,6 +17,7 @@ function loadStories() {
   require('../src/components/Organisms/LoginSignUp/LoginInputs/LoginInputs.stories.js');
   require('../src/components/Organisms/LoginSignUp/SignupButtons/SignupButtons.stories.js');
   require('../src/components/Organisms/LoginSignUp/SignupInputs/SignupInputs.stories.js');
+  require('../src/components/Organisms/Poll/LabelledSelectorCollection/LabelledSelectorCollection.stories.js');
   
 }
 
