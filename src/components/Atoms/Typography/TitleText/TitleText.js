@@ -10,7 +10,7 @@ import gStyles from '../../../styles'
 const styles = StyleSheet.create({
   text: {
     fontWeight: '700',
-    fontSize: 40,
+    fontSize: 35,
   },
   underline: {
     borderBottomWidth: 10,
@@ -19,10 +19,13 @@ const styles = StyleSheet.create({
     marginLeft: 3,
     width: 80,
   },
+  parent: {
+    padding: 10,
+  },
 })
 
 export default props => (
-  <View>
+  <View style={styles.parent}>
     <Text style={styles.text}>{props.children}</Text>
     <View style={styles.underline} />
   </View>
