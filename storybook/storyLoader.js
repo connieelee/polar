@@ -14,6 +14,7 @@ function loadStories() {
   require('../src/components/Atoms/Typography/TitleText/TitleText.stories.js');
   require('../src/components/Molecules/Form/LabelledInput/LabelledInput.stories.js');
   require('../src/components/Molecules/Form/LabelledSelector/LabelledSelector.stories.js');
+  require('../src/components/Molecules/Poll/PollSubmit/PollSubmit.stories.js');
   require('../src/components/Organisms/LoginSignUp/LoginButtons/LoginButtons.stories.js');
   require('../src/components/Organisms/LoginSignUp/LoginInputs/LoginInputs.stories.js');
   require('../src/components/Organisms/LoginSignUp/SignupButtons/SignupButtons.stories.js');
