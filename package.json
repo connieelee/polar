@@ -12,7 +12,7 @@
     "prestorybook": "rnstl"
   },
   "dependencies": {
-    "react": "16.0.0-alpha.12",
+    "react": "^16.0.0",
     "react-native": "0.48.3",
     "react-native-storybook-loader": "^1.5.1",
     "redux": "^3.7.2",
@@ -37,7 +37,9 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src"],
+      "searchDir": [
+        "./src"
+      ],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
