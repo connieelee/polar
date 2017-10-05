@@ -13,8 +13,11 @@ const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
     alignItems: 'center',
-    margin: 10,
-    borderWidth: 2,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
+    borderBottomWidth: 2,
+    borderTopWidth: 2,
+    borderColor: 'lightgrey',
   },
 })
 
