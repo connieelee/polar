@@ -6,7 +6,8 @@ import {
 
 const styles = StyleSheet.create({
   text: {
-
+    fontWeight: '400',
+    fontSize: 20,
   },
 })
 
