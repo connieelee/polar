@@ -5,7 +5,7 @@ import {
 } from 'react-native'
 
 import {
-  FormButton,
+  PollSubmit,
   TitleText,
   LabelledSelectorCollection,
 } from '../../components'
@@ -33,6 +33,6 @@ export default () => (
   <View style={StyleSheet.absoluteFill}>
     <TitleText>{question}</TitleText>
     <LabelledSelectorCollection options={choices} />
-    <FormButton>Submit</FormButton>
+    <PollSubmit>This is my option!</PollSubmit>
   </View>
 )
