@@ -4,11 +4,10 @@ import { database } from '../../../firebase'
 afterAll(() => database.goOffline())
 
 describe('Utilities', () => {
-  describe('Generate hash', () => {
+  describe('Generate key', () => {
     test('it only creates integers 1-4', () => {
-      const hashed = utilities.generateHash()
-      hashed
-        .toString()
+      const keyed = utilities.generateKey()
+      keyed
         .split('')
         .map(str => parseInt(str, 10))
         .forEach((num) => {
@@ -17,10 +16,10 @@ describe('Utilities', () => {
         })
     })
     test('it generates a number', () =>
-      expect(typeof utilities.generateHash()).toBe('number'),
+      expect(typeof utilities.generateKey()).toBe('string'),
     )
     test('it generates a number of length four', () =>
-      expect(utilities.generateHash().toString().length).toBe(4),
+      expect(utilities.generateKey().length).toBe(4),
     )
   })
 
@@ -33,11 +32,11 @@ describe('Utilities', () => {
     })
   })
 
-  describe('getHash', () => {
+  describe('getKey', () => {
     test('generates a valid hash', async () => {
-      const hash = await utilities.getHash()
-      expect(hash.toString().length).toBe(4)
-      expect(typeof hash).toBe('number')
+      const key = await utilities.getKey()
+      expect(key.length).toBe(4)
+      expect(typeof key).toBe('string')
     })
   })
 })
