@@ -2991,6 +2991,13 @@ find-up@^2.0.0, find-up@^2.1.0:
   dependencies:
     locate-path "^2.0.0"
 
+findup@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/findup/-/findup-0.1.5.tgz#8ad929a3393bac627957a7e5de4623b06b0e2ceb"
+  dependencies:
+    colors "~0.6.0-1"
+    commander "~2.1.0"
+
 firebase@^4.4.0:
   version "4.4.0"
   resolved "https://registry.yarnpkg.com/firebase/-/firebase-4.4.0.tgz#cffa34964c38ae24157ec930dbe147816fd8e3f4"
