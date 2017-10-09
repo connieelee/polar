@@ -6,7 +6,7 @@ import {
 
 import gStyle from '../../../styles'
 
-const size = 160
+const defaultSize = 160
 
 export default (props) => {
   const styles = StyleSheet.create({
@@ -14,9 +14,9 @@ export default (props) => {
       backgroundColor: props.backgroundColor ? props.backgroundColor : gStyle.colors.primary,
       alignItems: 'center',
       justifyContent: 'center',
-      height: size,
-      width: size,
-      borderRadius: 300,
+      height: props.size || defaultSize,
+      width: props.size || defaultSize,
+      borderRadius: props.size || defaultSize,
       margin: 10,
     },
   })
