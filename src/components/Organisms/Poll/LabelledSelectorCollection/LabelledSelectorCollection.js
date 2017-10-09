@@ -1,6 +1,6 @@
 import React from 'react'
 import {
-  ScrollView,
+  View,
 } from 'react-native'
 
 import {
@@ -8,11 +8,11 @@ import {
 } from '../../../../components'
 
 export default props => (
-  <ScrollView>
+  <View>
     {
       props.options.map(option => (
         <LabelledSelector key={option}>{option}</LabelledSelector>
       ))
     }
-  </ScrollView>
+  </View>
 )

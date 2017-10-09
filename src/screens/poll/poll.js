@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   StyleSheet,
+  ScrollView,
   View,
 } from 'react-native'
 
@@ -31,8 +32,10 @@ const choices = [
 
 export default () => (
   <View style={StyleSheet.absoluteFill}>
-    <TitleText>{question}</TitleText>
-    <LabelledSelectorCollection options={choices} />
+    <ScrollView>
+      <TitleText>{question}</TitleText>
+      <LabelledSelectorCollection options={choices} />
+    </ScrollView>
     <PollSubmit>This is my option!</PollSubmit>
   </View>
 )
