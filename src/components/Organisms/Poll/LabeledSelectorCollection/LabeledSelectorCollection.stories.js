@@ -1,7 +1,7 @@
 import React from 'react'
 import { storiesOf } from '@storybook/react-native'
 
-import LabelledSelectorCollection from './LabelledSelectorCollection'
+import LabeledSelectorCollection from './LabeledSelectorCollection'
 
 const options = [
   'A',
@@ -12,5 +12,5 @@ const options = [
 
 storiesOf('Organisms/Poll', module)
   .add('LabelledSelectorCollection', () => (
-    <LabelledSelectorCollection options={options} />
+    <LabeledSelectorCollection options={options} />
   ))

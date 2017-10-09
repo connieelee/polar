@@ -4,14 +4,14 @@ import {
 } from 'react-native'
 
 import {
-  LabelledSelector,
+  LabeledSelector,
 } from '../../../../components'
 
 export default props => (
   <View>
     {
       props.options.map(option => (
-        <LabelledSelector key={option}>{option}</LabelledSelector>
+        <LabeledSelector key={option}>{option}</LabeledSelector>
       ))
     }
   </View>

@@ -4,19 +4,19 @@ import {
   View,
 } from 'react-native'
 
-import LabelledSelector from './LabelledSelector'
+import LabeledSelector from './LabeledSelector'
 
 storiesOf('Molecules/Form', module)
   .add('LabelledSelector', () => (
-    <LabelledSelector>Choice A</LabelledSelector>
+    <LabeledSelector>Choice A</LabeledSelector>
   ))
   .add('LabelledSelector Selected', () => (
-    <LabelledSelector selected>Choice B</LabelledSelector>
+    <LabeledSelector selected>Choice B</LabeledSelector>
   ))
   .add('SeveralSelectors', () => (
     <View style={{ flex: 1 }}>
-      <LabelledSelector>Choice A</LabelledSelector>
-      <LabelledSelector>Choice B</LabelledSelector>
-      <LabelledSelector selected>Choice C</LabelledSelector>
+      <LabeledSelector>Choice A</LabeledSelector>
+      <LabeledSelector>Choice B</LabeledSelector>
+      <LabeledSelector selected>Choice C</LabeledSelector>
     </View>
   ))

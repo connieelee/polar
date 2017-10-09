@@ -1,2 +1,2 @@
-export { default as LabelledInput } from './LabelledInput/LabelledInput'
-export { default as LabelledSelector } from './LabelledSelector/LabelledSelector'
+export { default as LabeledInput } from './LabeledInput/LabeledInput'
+export { default as LabeledSelector } from './LabeledSelector/LabeledSelector'

@@ -1,1 +1,1 @@
-export { default as LabelledSelectorCollection } from './LabelledSelectorCollection/LabelledSelectorCollection'
+export { default as LabeledSelectorCollection } from './LabeledSelectorCollection/LabeledSelectorCollection'
