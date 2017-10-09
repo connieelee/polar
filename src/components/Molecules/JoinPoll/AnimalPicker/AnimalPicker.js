@@ -9,8 +9,6 @@ import {
 } from '../../../../components'
 import gStyles from '../../../styles'
 
-// const { height, width } = Dimensions.get('window')
-
 const styles = StyleSheet.create({
   parent: {
     flex: 1,
