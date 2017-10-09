@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native'
 
 import SignupButtons from './SignupButtons'
 
-storiesOf('Organisms / Login|Signup', module)
+storiesOf('Organisms/Login|Signup', module)
   .add('SignupButtons', () => (
     <SignupButtons />
   ))

@@ -4,19 +4,19 @@ import {
 } from 'react-native'
 
 import {
-  LabelledInput,
+  LabeledInput,
 } from '../../../../components'
 
 export default () => (
   <View>
-    <LabelledInput
+    <LabeledInput
       label="Email"
       textInput={{
         autoCapitalize: 'none',
         keyboardType: 'email-address',
       }}
     />
-    <LabelledInput
+    <LabeledInput
       label="Password"
       textInput={{
         autoCapitalize: 'none',
