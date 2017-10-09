@@ -9,7 +9,7 @@ import gStyle from '../../../styles'
 export default (props) => {
   const styles = StyleSheet.create({
     view: {
-      backgroundColor: props.backgroundColor || gStyle.colors.primary,
+      backgroundColor: props.backgroundColor || gStyle.colors.blue,
       alignItems: 'center',
       justifyContent: 'center',
       flex: 1,

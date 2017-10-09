@@ -8,7 +8,7 @@ const animals = [
   {
     id: 1,
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg',
-    backgroundColor: gStyles.colors.primary,
+    backgroundColor: gStyles.colors.blue,
     order: 1,
   },
   {
@@ -20,7 +20,7 @@ const animals = [
   {
     id: 1,
     imageUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/66/Polar_Bear_-_Alaska_%28cropped%29.jpg',
-    backgroundColor: gStyles.colors.primary,
+    backgroundColor: gStyles.colors.blue,
     order: 3,
   },
 ]

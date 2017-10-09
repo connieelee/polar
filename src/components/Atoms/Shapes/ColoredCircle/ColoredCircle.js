@@ -11,7 +11,7 @@ const defaultSize = 160
 export default (props) => {
   const styles = StyleSheet.create({
     shape: {
-      backgroundColor: props.backgroundColor ? props.backgroundColor : gStyle.colors.primary,
+      backgroundColor: props.backgroundColor ? props.backgroundColor : gStyle.colors.blue,
       alignItems: 'center',
       justifyContent: 'center',
       height: props.size || defaultSize,

@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
   text: {
     fontWeight: '600',
     fontSize: 18,
-    color: gStyles.colors.primary,
+    color: gStyles.colors.blue,
   },
 })
 
