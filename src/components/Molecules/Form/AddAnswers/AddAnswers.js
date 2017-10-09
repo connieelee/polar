@@ -6,11 +6,15 @@ import {
 
 import {
   LabeledInput,
+  TinyButton,
 } from '../../../../components'
 
 const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 10,
+    justifyContent: 'space-between',
   },
 })
 
@@ -19,5 +23,10 @@ export default props => (
     <LabeledInput
       label="Answers"
     />
+    <TinyButton
+      onPress={props.onPress}
+    >
+      +
+    </TinyButton>
   </View>
 )
