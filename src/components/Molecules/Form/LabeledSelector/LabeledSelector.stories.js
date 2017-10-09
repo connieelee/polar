@@ -7,10 +7,10 @@ import {
 import LabeledSelector from './LabeledSelector'
 
 storiesOf('Molecules/Form', module)
-  .add('LabelledSelector', () => (
+  .add('LabeledSelector', () => (
     <LabeledSelector>Choice A</LabeledSelector>
   ))
-  .add('LabelledSelector Selected', () => (
+  .add('LabeledSelector Selected', () => (
     <LabeledSelector selected>Choice B</LabeledSelector>
   ))
   .add('SeveralSelectors', () => (

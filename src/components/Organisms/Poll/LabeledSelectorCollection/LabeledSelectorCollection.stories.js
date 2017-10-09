@@ -11,6 +11,6 @@ const options = [
 ]
 
 storiesOf('Organisms/Poll', module)
-  .add('LabelledSelectorCollection', () => (
+  .add('LabeledSelectorCollection', () => (
     <LabeledSelectorCollection options={options} />
   ))

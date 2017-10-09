@@ -8,7 +8,7 @@ import {
 import {
   PollSubmit,
   TitleText,
-  LabelledSelectorCollection,
+  LabeledSelectorCollection,
 } from '../../components'
 
 const question = 'What food should we get next week?'
@@ -34,7 +34,7 @@ export default () => (
   <View style={StyleSheet.absoluteFill}>
     <ScrollView>
       <TitleText>{question}</TitleText>
-      <LabelledSelectorCollection options={choices} />
+      <LabeledSelectorCollection options={choices} />
     </ScrollView>
     <PollSubmit>This is my option!</PollSubmit>
   </View>
