@@ -41,5 +41,12 @@
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/Dosis",
+      "./assets/fonts/Josefin_Slab",
+      "./assets/fonts/Roboto"
+    ]
   }
 }
