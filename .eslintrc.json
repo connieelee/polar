@@ -3,7 +3,8 @@
     "jest": false,
     "expect": false,
     "describe": false,
-    "test": false
+    "test": false,
+    "afterAll": false
   },
   "extends": "airbnb",
   "rules": {
