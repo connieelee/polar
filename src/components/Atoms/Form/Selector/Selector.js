@@ -9,10 +9,11 @@ import gStyles from '../../../styles'
 
 const styles = StyleSheet.create({
   parent: {
-    height: 50,
-    width: 50,
+    height: 40,
+    width: 40,
     borderWidth: 2,
-    margin: 10,
+    marginHorizontal: 20,
+    marginVertical: 10,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
