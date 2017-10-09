@@ -24,7 +24,7 @@ describe('Utilities', () => {
   })
 
   describe('objectNotEmpty', () => {
-    test('it returns false if an object isn\'t empty', () => {
+    test('it returns true if an object isn\'t empty', () => {
       expect(utilities.objectNotEmpty({ a: true })).toBe(true)
     })
     test('it returns false if object is empty', () => {
