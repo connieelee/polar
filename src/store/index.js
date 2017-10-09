@@ -16,7 +16,6 @@ const reducer = combineReducers({
   user,
   poll,
 })
-
 const middleware = composeWithDevTools(applyMiddleware(thunkMiddleware, createLogger({
   collapsed: true,
 })))

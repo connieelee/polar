@@ -7,12 +7,13 @@
     "start-dev": "REACT_DEBUGGER='rndebugger-open --open --port 8081' npm start",
     "postinstall": "rndebugger-open",
     "test": "jest",
-    "test-redux": "jest src/store",
+    "test-redux": "jest src/store -- watch",
     "storybook": "storybook start -p 7007",
     "prestorybook": "rnstl"
   },
   "dependencies": {
     "react": "^16.0.0",
+    "firebase": "^4.4.0",
     "react-native": "0.48.3",
     "react-native-storybook-loader": "^1.5.1",
     "redux": "^3.7.2",
