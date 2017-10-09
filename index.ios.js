@@ -7,4 +7,4 @@ import {
 } from './src/screens'
 
 
-AppRegistry.registerComponent('polar', () => login);
+AppRegistry.registerComponent('polar', () => landingPage);
