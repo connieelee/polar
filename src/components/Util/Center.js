@@ -8,6 +8,7 @@ const styles = StyleSheet.create({
   parent: {
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1,
   },
 })
 
