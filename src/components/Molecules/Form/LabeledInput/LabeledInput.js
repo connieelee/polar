@@ -19,6 +19,7 @@ export default props => (
   <View style={styles.inputWrapper}>
     <FormLabel>{props.label}</FormLabel>
     <TextInput
+      width={props.width}
       value={props.value}
       onChangeText={props.onChangeText}
     />

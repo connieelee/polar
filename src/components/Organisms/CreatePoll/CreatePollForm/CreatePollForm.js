@@ -24,6 +24,7 @@ export default class extends React.Component {
     this.lastId = 0
     this.state = {
       answers: [],
+      question: '',
       error: {
         question: '',
         answers: '',
@@ -31,6 +32,11 @@ export default class extends React.Component {
       // { text, id }
     }
   }
+
+  changeQuestion = question =>
+    this.setState({
+      question,
+    })
 
   removeAnswer = id =>
     this.setState({
@@ -71,6 +77,8 @@ export default class extends React.Component {
     <View style={[StyleSheet.absoluteFill, styles.parent]}>
       <LabeledInput
         label="Question"
+        value={this.state.question}
+        onTextChange={this.changeQuestion}
       />
       <AddAnswers onPress={this.addAnswer} />
       {

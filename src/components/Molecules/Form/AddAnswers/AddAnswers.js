@@ -8,13 +8,15 @@ import {
   LabeledInput,
   TinyButton,
 } from '../../../../components'
+import gStyles from '../../../styles'
 
 const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: 10,
+    marginHorizontal: gStyles.whiteSpace.large,
     justifyContent: 'space-between',
+    width: gStyles.width.medium,
   },
 })
 
@@ -40,6 +42,7 @@ export default class extends React.Component {
         label="Answers"
         onChangeText={this.changeText}
         value={this.state.textField}
+        width={250}
       />
       <TinyButton
         onPress={this.submit}
