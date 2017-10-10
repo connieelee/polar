@@ -9,6 +9,7 @@ import {
   LabeledInput,
   AddAnswers,
   AddedAnswer,
+  ErrorText,
 } from '../../../../components'
 
 const styles = StyleSheet.create({
@@ -23,6 +24,7 @@ export default class extends React.Component {
     this.lastId = 0
     this.state = {
       answers: [],
+      error: '',
       // { text, id }
     }
   }
@@ -34,11 +36,13 @@ export default class extends React.Component {
 
 
   addAnswer = (text) => {
-    this.lastId = this.lastId + 1
-    const toAdd = _.cloneDeep([...this.state.answers, { text, id: this.lastId }])
-    this.setState({
-      answers: toAdd,
-    })
+    if (text) {
+      this.lastId = this.lastId + 1
+      const toAdd = _.cloneDeep([...this.state.answers, { text, id: this.lastId }])
+      this.setState({
+        answers: toAdd,
+      })
+    }
   }
 
   render = () => (
@@ -56,6 +60,9 @@ export default class extends React.Component {
             {answer.text}
           </AddedAnswer>
         ))
+      }
+      {
+        !!this.state.error.length && <ErrorText>{this.state.error}</ErrorText>
       }
     </View>
   )
