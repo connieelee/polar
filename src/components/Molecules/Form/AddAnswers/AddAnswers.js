@@ -5,8 +5,9 @@ import {
 } from 'react-native'
 
 import {
-  LabeledInput,
+  FormLabel,
   TinyButton,
+  TextInput,
 } from '../../../../components'
 import gStyles from '../../../styles'
 
@@ -14,8 +15,11 @@ const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginHorizontal: gStyles.whiteSpace.large,
+    width: gStyles.width.medium,
     justifyContent: 'space-between',
+  },
+  wrapper: {
+    marginHorizontal: gStyles.whiteSpace.large,
     width: gStyles.width.medium,
   },
 })
@@ -37,18 +41,20 @@ export default class extends React.Component {
   }
 
   render = () => (
-    <View style={styles.parent}>
-      <LabeledInput
-        label="Answers"
-        onChangeText={this.changeText}
-        value={this.state.textField}
-        width={250}
-      />
-      <TinyButton
-        onPress={this.submit}
-      >
-        +
-      </TinyButton>
+    <View style={styles.wrapper}>
+      <FormLabel>Answers</FormLabel>
+      <View style={styles.parent}>
+        <TextInput
+          width={250}
+          onChangeText={this.changeText}
+          value={this.state.textField}
+        />
+        <TinyButton
+          onPress={this.submit}
+        >
+          +
+        </TinyButton>
+      </View>
     </View>
   )
 }
