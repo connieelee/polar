@@ -24,7 +24,10 @@ export default class extends React.Component {
     this.lastId = 0
     this.state = {
       answers: [],
-      error: '',
+      error: {
+        question: '',
+        answers: '',
+      },
       // { text, id }
     }
   }
@@ -34,13 +37,32 @@ export default class extends React.Component {
       answers: _.cloneDeep(this.state.answers.filter(answer => answer.id !== id)),
     })
 
+  _duplicateAnswer = text =>
+    !!this.state.answers.filter(answer => answer.text === text).length
 
   addAnswer = (text) => {
     if (text) {
-      this.lastId = this.lastId + 1
-      const toAdd = _.cloneDeep([...this.state.answers, { text, id: this.lastId }])
+      if (this._duplicateAnswer(text)) {
+        this.setState({
+          error: {
+            answers: 'Oops answer\'s already there.',
+          },
+        })
+      } else {
+        this.lastId = this.lastId + 1
+        const toAdd = _.cloneDeep([...this.state.answers, { text, id: this.lastId }])
+        this.setState({
+          answers: toAdd,
+          error: {
+            answers: '',
+          },
+        })
+      }
+    } else {
       this.setState({
-        answers: toAdd,
+        error: {
+          answers: 'Please enter in text.',
+        },
       })
     }
   }
@@ -61,9 +83,7 @@ export default class extends React.Component {
           </AddedAnswer>
         ))
       }
-      {
-        !!this.state.error.length && <ErrorText>{this.state.error}</ErrorText>
-      }
+      <ErrorText>{this.state.error.answers}</ErrorText>
     </View>
   )
 }
