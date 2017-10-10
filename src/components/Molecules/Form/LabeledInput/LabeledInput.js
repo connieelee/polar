@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
 export default props => (
   <View style={styles.inputWrapper}>
     <FormLabel>{props.label}</FormLabel>
-    <TextInput {...props.textInput} />
+    <TextInput
+      value={props.value}
+      onChangeText={props.onChangeText}
+    />
   </View>
 )

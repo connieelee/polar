@@ -18,15 +18,30 @@ const styles = StyleSheet.create({
   },
 })
 
-export default props => (
-  <View style={styles.parent}>
-    <LabeledInput
-      label="Answers"
-    />
-    <TinyButton
-      onPress={props.onPress}
-    >
-      +
-    </TinyButton>
-  </View>
-)
+export default class extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      textField: '',
+    }
+  }
+
+  changeText = (textField) =>
+    this.setState({ textField })
+
+  render = () => (
+    <View style={styles.parent}>
+      <LabeledInput
+        label="Answers"
+        onChangeText={this.changeText}
+        value={this.state.textField}
+      />
+      <TinyButton
+        onPress={() => this.props.onPress(this.state.textField)}
+      >
+        +
+      </TinyButton>
+    </View>
+  )
+}
+
