@@ -29,6 +29,11 @@ export default class extends React.Component {
   changeText = (textField) =>
     this.setState({ textField })
 
+  submit = () => {
+    this.props.onPress(this.state.textField)
+    this.setState({ textField: '' })
+  }
+
   render = () => (
     <View style={styles.parent}>
       <LabeledInput
@@ -37,7 +42,7 @@ export default class extends React.Component {
         value={this.state.textField}
       />
       <TinyButton
-        onPress={() => this.props.onPress(this.state.textField)}
+        onPress={this.submit}
       >
         +
       </TinyButton>
