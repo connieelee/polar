@@ -13,9 +13,10 @@ import gStyles from '../../../styles'
 const styles = StyleSheet.create({
   parent: {
     flexDirection: 'row',
-    flex: 1,
+    width: gStyles.width.medium,
     justifyContent: 'space-between',
     alignItems: 'center',
+    marginVertical: gStyles.whiteSpace.small,
   },
 })
 

@@ -21,6 +21,7 @@ const styles = StyleSheet.create({
   wrapper: {
     marginHorizontal: gStyles.whiteSpace.large,
     width: gStyles.width.medium,
+    marginBottom: gStyles.whiteSpace.large,
   },
 })
 
