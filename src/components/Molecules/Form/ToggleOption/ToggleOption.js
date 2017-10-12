@@ -23,6 +23,7 @@ export default props => (
   <View style={styles.parent}>
     <FormLabel>{props.children}</FormLabel>
     <Toggle
+      color={props.color}
       onPress={props.onPress}
       active={props.active}
       size={gStyles.width.tiny}

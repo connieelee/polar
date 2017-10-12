@@ -82,6 +82,12 @@ export default class extends React.Component {
         value={this.state.question}
         onChangeText={this.changeQuestion}
       />
+      <ToggleOption
+        onPress={() => this.setState({ anonymous: !this.state.anonymous })}
+        active={this.state.anonymous}
+      >
+        Responses are anonymous?
+      </ToggleOption>
       <AddAnswers onPress={this.addAnswer} />
       {
         this.state.answers.map(answer => (
@@ -93,12 +99,6 @@ export default class extends React.Component {
           </AddedAnswer>
         ))
       }
-      <ToggleOption
-        onPress={() => this.setState({ anonymous: !this.state.anonymous })}
-        active={this.state.anonymous}
-      >
-        Anonymous
-      </ToggleOption>
       <ErrorText>{this.state.error.answers}</ErrorText>
     </View>
   )

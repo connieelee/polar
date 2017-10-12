@@ -18,6 +18,7 @@ export default (props) => {
       borderWidth: props.borderWidth || 3,
       width: props.size || 50,
       height: props.size || 50,
+      borderColor: props.color || 'black',
       borderRadius: props.borderRadius || 10,
       alignItems: 'center',
       justifyContent: 'center',
@@ -31,6 +32,7 @@ export default (props) => {
           props.active && <Icon
             name={props.iconName || 'check'}
             size={(props.size / 5) * 3 || 30}
+            color={props.color}
           />
         }
       </View>
