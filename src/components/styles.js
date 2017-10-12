@@ -11,6 +11,7 @@ export default {
     large: 20,
   },
   width: {
+    tiny: 40,
     small: 275,
     medium: 300,
     large: 325,

@@ -92,6 +92,7 @@ export default class extends React.Component {
           </AddedAnswer>
         ))
       }
+      <ToggleOption>Anonymous</ToggleOption>
       <ErrorText>{this.state.error.answers}</ErrorText>
     </View>
   )

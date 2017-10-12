@@ -15,13 +15,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginHorizontal: gStyles.whiteSpace.medium,
+    width: gStyles.width.medium,
   },
 })
 
 export default props => (
   <View style={styles.parent}>
     <FormLabel>{props.children}</FormLabel>
-    <Toggle active={props.active} />
+    <Toggle
+      onPress={props.onPress}
+      active={props.active}
+      size={gStyles.width.tiny}
+    />
   </View>
 )

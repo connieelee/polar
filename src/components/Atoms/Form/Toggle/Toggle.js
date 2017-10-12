@@ -10,8 +10,9 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 export default (props) => {
   const styles = StyleSheet.create({
     touchable: {
-      padding: 10,
-      width: (10 * 2) + (props.size || 50),
+      paddingVertical: 10,
+      paddingLeft: 10,
+      width: (10) + (props.size || 50),
     },
     parent: {
       borderWidth: props.borderWidth || 3,
@@ -24,7 +25,7 @@ export default (props) => {
   })
 
   return (
-    <TouchableOpacity style={styles.touchable}>
+    <TouchableOpacity style={styles.touchable} onPress={props.onPress}>
       <View style={styles.parent}>
         {
           props.active && <Icon
