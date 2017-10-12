@@ -78,7 +78,7 @@ export default class extends React.Component {
       <LabeledInput
         label="Question"
         value={this.state.question}
-        onTextChange={this.changeQuestion}
+        onChangeText={this.changeQuestion}
       />
       <AddAnswers onPress={this.addAnswer} />
       {
