@@ -9,6 +9,7 @@ function loadStories() {
   require('../src/components/Atoms/Form/FormButton/FormButton.stories.js');
   require('../src/components/Atoms/Form/TextInput/TextInput.stories.js');
   require('../src/components/Atoms/Form/TinyButton/TinyButton.stories.js');
+  require('../src/components/Atoms/Form/Toggle/Toggle.stories.js');
   require('../src/components/Atoms/Typography/BodyText/BodyText.stories.js');
   require('../src/components/Atoms/Typography/ErrorText/ErrorText.stories.js');
   require('../src/components/Atoms/Typography/FormLabel/FormLabel.stories.js');
