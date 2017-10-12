@@ -3,7 +3,7 @@ import { storiesOf } from '@storybook/react-native'
 
 import ToggleOption from './ToggleOption'
 
-storiesOf('Molecules/ToggleOption', module)
+storiesOf('Molecules/Form', module)
   .add('ToggleOption', () => (
     <ToggleOption>Option 1</ToggleOption>
   ))
