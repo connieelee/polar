@@ -24,13 +24,14 @@ export default class extends React.Component {
     super()
     this.lastId = 0
     this.state = {
+      anonymous: false,
+      // { text, id }
       answers: [],
       question: '',
       error: {
         question: '',
         answers: '',
       },
-      // { text, id }
     }
   }
 
@@ -92,7 +93,12 @@ export default class extends React.Component {
           </AddedAnswer>
         ))
       }
-      <ToggleOption>Anonymous</ToggleOption>
+      <ToggleOption
+        onPress={() => this.setState({ anonymous: !this.state.anonymous })}
+        active={this.state.anonymous}
+      >
+        Anonymous
+      </ToggleOption>
       <ErrorText>{this.state.error.answers}</ErrorText>
     </View>
   )
