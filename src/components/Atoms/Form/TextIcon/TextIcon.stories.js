@@ -5,5 +5,5 @@ import TextIcon from './TextIcon'
 
 storiesOf('Atoms/Form', module)
   .add('TextIcon', () => (
-    <TextIcon icon="arrow">Continue</TextIcon>
+    <TextIcon name="check">Continue</TextIcon>
   ))
