@@ -7,6 +7,7 @@
 function loadStories() {
   
   require('../src/components/Atoms/Form/FormButton/FormButton.stories.js');
+  require('../src/components/Atoms/Form/TextIcon/TextIcon.stories.js');
   require('../src/components/Atoms/Form/TextInput/TextInput.stories.js');
   require('../src/components/Atoms/Form/TinyButton/TinyButton.stories.js');
   require('../src/components/Atoms/Form/Toggle/Toggle.stories.js');

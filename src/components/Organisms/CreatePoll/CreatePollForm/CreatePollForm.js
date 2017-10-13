@@ -75,6 +75,10 @@ export default class extends React.Component {
     }
   }
 
+  submit = () => {
+
+  }
+
   render = () => (
     <View style={[StyleSheet.absoluteFill, styles.parent]}>
       <LabeledInput
