@@ -7,7 +7,6 @@
 function loadStories() {
   
   require('../src/components/Atoms/Form/FormButton/FormButton.stories.js');
-  require('../src/components/Atoms/Form/TextIcon/TextIcon.stories.js');
   require('../src/components/Atoms/Form/TextInput/TextInput.stories.js');
   require('../src/components/Atoms/Form/TinyButton/TinyButton.stories.js');
   require('../src/components/Atoms/Form/Toggle/Toggle.stories.js');
@@ -17,6 +16,7 @@ function loadStories() {
   require('../src/components/Molecules/Form/AddAnswers/AddAnswers.stories.js');
   require('../src/components/Molecules/Form/AddedAnswer/AddedAnswer.stories.js');
   require('../src/components/Molecules/Form/LabeledInput/LabeledInput.stories.js');
+  require('../src/components/Molecules/Form/TextIcon/TextIcon.stories.js');
   require('../src/components/Molecules/Form/ToggleOption/ToggleOption.stories.js');
   require('../src/components/Organisms/CreatePoll/CreatePollForm/CreatePollForm.stories.js');
   require('../src/components/Organisms/LoginSignUp/LoginButtons/LoginButtons.stories.js');

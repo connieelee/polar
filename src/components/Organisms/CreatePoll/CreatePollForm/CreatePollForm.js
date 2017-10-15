@@ -11,6 +11,7 @@ import {
   AddedAnswer,
   ToggleOption,
   ErrorText,
+  TextIcon,
 } from '../../../../components'
 
 const styles = StyleSheet.create({
@@ -104,6 +105,13 @@ export default class extends React.Component {
         ))
       }
       <ErrorText>{this.state.error.answers}</ErrorText>
+      <TextIcon
+        onPress={this.submit}
+        name="check"
+        bold
+      >
+        Continue
+      </TextIcon>
     </View>
   )
 }
