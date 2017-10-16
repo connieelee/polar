@@ -2,6 +2,7 @@ import React from 'react'
 import {
   StyleSheet,
   View,
+  ScrollView,
 } from 'react-native'
 import _ from 'lodash'
 
@@ -17,6 +18,7 @@ import {
 const styles = StyleSheet.create({
   parent: {
     alignItems: 'center',
+    marginBottom: 10,
   },
 })
 
@@ -80,6 +82,10 @@ export default class extends React.Component {
 
   }
 
+  findErrors = () => {
+    errors = {}
+  }
+
   render = () => (
     <View style={[StyleSheet.absoluteFill, styles.parent]}>
       <LabeledInput
@@ -87,23 +93,25 @@ export default class extends React.Component {
         value={this.state.question}
         onChangeText={this.changeQuestion}
       />
-      <ToggleOption
+      {/* <ToggleOption
         onPress={() => this.setState({ anonymous: !this.state.anonymous })}
         active={this.state.anonymous}
       >
         Responses are anonymous?
-      </ToggleOption>
+      </ToggleOption> */}
       <AddAnswers onPress={this.addAnswer} />
-      {
-        this.state.answers.map(answer => (
-          <AddedAnswer
-            key={answer.id}
-            onPress={() => this.removeAnswer(answer.id)}
-          >
-            {answer.text}
-          </AddedAnswer>
-        ))
-      }
+      <ScrollView>
+        {
+          this.state.answers.map(answer => (
+            <AddedAnswer
+              key={answer.id}
+              onPress={() => this.removeAnswer(answer.id)}
+            >
+              {answer.text}
+            </AddedAnswer>
+          ))
+        }
+      </ScrollView>
       <ErrorText>{this.state.error.answers}</ErrorText>
       <TextIcon
         onPress={this.submit}

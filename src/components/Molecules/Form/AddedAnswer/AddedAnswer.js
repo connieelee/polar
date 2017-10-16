@@ -7,6 +7,7 @@ import {
 import {
   TinyButton,
   BodyText,
+  SmallBodyText,
 } from '../../../../components'
 import gStyles from '../../../styles'
 
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
 
 export default props => (
   <View style={styles.parent}>
-    <BodyText>{props.children}</BodyText>
+    <SmallBodyText>{props.children}</SmallBodyText>
     <TinyButton
       onPress={props.onPress}
       size={30}

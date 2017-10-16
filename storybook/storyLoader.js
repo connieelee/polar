@@ -13,6 +13,7 @@ function loadStories() {
   require('../src/components/Atoms/Typography/BodyText/BodyText.stories.js');
   require('../src/components/Atoms/Typography/ErrorText/ErrorText.stories.js');
   require('../src/components/Atoms/Typography/FormLabel/FormLabel.stories.js');
+  require('../src/components/Atoms/Typography/SmallBodyText/SmallBodyText.stories.js');
   require('../src/components/Molecules/Form/AddAnswers/AddAnswers.stories.js');
   require('../src/components/Molecules/Form/AddedAnswer/AddedAnswer.stories.js');
   require('../src/components/Molecules/Form/LabeledInput/LabeledInput.stories.js');
