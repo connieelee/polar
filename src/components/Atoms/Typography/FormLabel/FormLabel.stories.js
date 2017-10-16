@@ -7,3 +7,6 @@ storiesOf('Atoms/Typography', module)
   .add('FormLabel', () => (
     <FormLabel>Label</FormLabel>
   ))
+  .add('FormLabel w/ Error', () => (
+    <FormLabel error="Yowza! eRRR">I have an error</FormLabel>
+  ))

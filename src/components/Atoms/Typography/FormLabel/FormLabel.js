@@ -12,8 +12,16 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: gStyles.colors.primary,
   },
+  error: {
+    color: 'red',
+    fontWeight: '400',
+  },
 })
 
 export default props => (
-  <Text style={styles.text}>{props.children}</Text>
+  <Text style={styles.text}>{props.children}
+    {
+      !!props.error && <Text style={styles.error}> {props.error}</Text>
+    }
+  </Text>
 )

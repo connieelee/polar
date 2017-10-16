@@ -41,6 +41,9 @@ export default class extends React.Component {
   changeQuestion = question =>
     this.setState({
       question,
+      error: {
+        question: '',
+      },
     })
 
   removeAnswer = id =>
@@ -79,11 +82,21 @@ export default class extends React.Component {
   }
 
   submit = () => {
-
+    if(!this.findErrors()) {
+      console.log('submit!')
+    }
   }
 
   findErrors = () => {
-    errors = {}
+    const error = {}
+    if(this.answers.length < 2) error.answers = 'Please have at least two answers options.'
+    if(!this.question) error.question = 'Please add question.'
+    this.setState({
+      error,
+    })
+    return !!Object.values(this.state.error)
+      .filter(ele => ele)
+      .length
   }
 
   render = () => (
