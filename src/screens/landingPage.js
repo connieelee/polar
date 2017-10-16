@@ -15,20 +15,30 @@ var styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-around',
     backgroundColor: '#0D3B66',
-    marginTop: 20,
-    marginBottom: 20,
+    paddingTop: 80,
+    paddingBottom: 80,
+    paddingLeft: 25,
+    paddingRight: 25,
   },
   title: {
     fontSize: 50,
     fontFamily: 'Dosis',
     color: '#F4D35E',
+    textAlign: 'center',
+    marginBottom: 20,
+  },
+  description: {
+    fontSize: 25,
+    fontFamily: 'Dosis',
+    color: 'white',
+    textAlign: 'center',
   },
   btn: {
     alignItems: 'center',
     margin: 5,
     padding: 13,
     borderRadius: 20,
-    width: 250,
+    width: 200,
   },
   btnText: {
     fontSize: 20,
@@ -97,7 +107,10 @@ export default class LandingPage extends React.Component {
           opacity: this.state.title.fadeIn,
           transform: [{translateY: this.state.title.slideUp}],
         }}>
-          <Text style={styles.title}>P O L A R</Text>
+          <Text style={styles.title}>P  O  L  A  R</Text>
+          <Text style={styles.description}>
+            A real-time polling app that helps presenters keep in tune with the audience
+          </Text>
         </Animated.View>
         <View>
           <Animated.View style={{opacity: this.state.signup.fadeIn}}>
