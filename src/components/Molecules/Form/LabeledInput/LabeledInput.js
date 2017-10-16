@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
 
 export default props => (
   <View style={styles.inputWrapper}>
-    <FormLabel>{props.label}</FormLabel>
+    <FormLabel error={props.error}>{props.label}</FormLabel>
     <TextInput
       width={props.width}
       value={props.value}

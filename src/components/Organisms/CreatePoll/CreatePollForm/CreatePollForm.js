@@ -89,8 +89,8 @@ export default class extends React.Component {
 
   findErrors = () => {
     const error = {}
-    if(this.answers.length < 2) error.answers = 'Please have at least two answers options.'
-    if(!this.question) error.question = 'Please add question.'
+    if(this.state.answers.length < 2) error.answers = 'Please have at least two answers options.'
+    if(!this.state.question) error.question = 'Please add question.'
     this.setState({
       error,
     })
@@ -105,8 +105,12 @@ export default class extends React.Component {
         label="Question"
         value={this.state.question}
         onChangeText={this.changeQuestion}
+        error={this.state.error.question}
       />
-      <AddAnswers onPress={this.addAnswer} />
+      <AddAnswers
+        onPress={this.addAnswer}
+        error={this.state.error.answers}
+      />
       <ScrollView>
         {
           this.state.answers.map(answer => (
@@ -119,7 +123,6 @@ export default class extends React.Component {
           ))
         }
       </ScrollView>
-      <ErrorText>{this.state.error.answers}</ErrorText>
       <TextIcon
         onPress={this.submit}
         name="check"

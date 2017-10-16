@@ -43,7 +43,7 @@ export default class extends React.Component {
 
   render = () => (
     <View style={styles.wrapper}>
-      <FormLabel>Answers</FormLabel>
+      <FormLabel error={this.props.error}>Answers</FormLabel>
       <View style={styles.parent}>
         <TextInput
           width={250}
