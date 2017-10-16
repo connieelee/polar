@@ -93,12 +93,6 @@ export default class extends React.Component {
         value={this.state.question}
         onChangeText={this.changeQuestion}
       />
-      {/* <ToggleOption
-        onPress={() => this.setState({ anonymous: !this.state.anonymous })}
-        active={this.state.anonymous}
-      >
-        Responses are anonymous?
-      </ToggleOption> */}
       <AddAnswers onPress={this.addAnswer} />
       <ScrollView>
         {
