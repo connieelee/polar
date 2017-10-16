@@ -73,6 +73,11 @@ export default class LandingPage extends React.Component {
     }
   }
 
+  static navigationOptions = {
+    title: 'Welcome',
+    header: null,
+  }
+
   componentDidMount() {
     const titleAnimations = Animated.parallel([
       Animated.timing(
@@ -101,6 +106,7 @@ export default class LandingPage extends React.Component {
   }
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <View style={styles.container}>
         <Animated.View style={{
@@ -115,7 +121,7 @@ export default class LandingPage extends React.Component {
         <View>
           <Animated.View style={{opacity: this.state.signup.fadeIn}}>
             <TouchableOpacity
-              onPress={()=>{}}
+              onPress={()=>{ navigate('Signup'); }}
               style={[styles.btn, styles.signupBtn]}
             >
               <Text style={[styles.btnText, styles.signupText]}>SIGN UP</Text>
@@ -123,7 +129,7 @@ export default class LandingPage extends React.Component {
           </Animated.View>
           <Animated.View style={{opacity: this.state.login.fadeIn}}>
             <TouchableOpacity
-              onPress={()=>{}}
+              onPress={()=>{ navigate('Login'); }}
               style={[styles.btn, styles.loginBtn]}
             >
               <Text style={[styles.btnText, styles.loginText]}>LOG IN</Text>
