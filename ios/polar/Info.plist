@@ -53,7 +53,6 @@
 	</dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>AbrilFatface-Regular.ttf</string>
 		<string>Dosis-Bold.ttf</string>
 		<string>Dosis-ExtraBold.ttf</string>
 		<string>Dosis-ExtraLight.ttf</string>
@@ -83,7 +82,6 @@
 		<string>Roboto-Regular.ttf</string>
 		<string>Roboto-Thin.ttf</string>
 		<string>Roboto-ThinItalic.ttf</string>
-		<string>Slabo27px-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
