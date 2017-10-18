@@ -4,13 +4,16 @@ import {
   StyleSheet,
 } from 'react-native'
 
-import gStyles from '../../../styles';
+import {
+  colors,
+  fonts,
+} from '../../../styles';
 
 const styles = StyleSheet.create({
   text: {
-    color: gStyles.colors.accent1,
-    fontFamily: gStyles.fonts.header,
-    fontSize: gStyles.fontSizes.large,
+    color: colors.accent1,
+    fontFamily: fonts.families.header,
+    fontSize: fonts.sizes.large,
     textAlign: 'center',
     marginBottom: 20,
   },
