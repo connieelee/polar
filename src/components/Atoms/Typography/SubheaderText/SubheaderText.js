@@ -10,12 +10,28 @@ import {
 } from '../../../styles';
 
 const styles = StyleSheet.create({
-  text: {
+  dark: {
     color: colors.light,
+
+  },
+  light: {
+    color: colors.primary,
+  },
+  text: {
     fontFamily: fonts.families.header,
     fontSize: fonts.sizes.medium,
     textAlign: 'center',
   },
 })
 
-export default props => <Text style={styles.text}>{props.children}</Text>
+const SubheaderText = (props, context) => (
+  <Text style={[styles.text, styles[context.theme]]}>
+    {props.children}
+  </Text>
+)
+
+SubheaderText.contextTypes = {
+  theme: React.PropTypes.string,
+}
+
+export default SubheaderText

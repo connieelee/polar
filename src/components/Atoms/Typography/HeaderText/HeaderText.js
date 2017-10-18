@@ -10,8 +10,13 @@ import {
 } from '../../../styles';
 
 const styles = StyleSheet.create({
-  text: {
+  dark: {
     color: colors.accent1,
+  },
+  light: {
+    color: colors.accent2,
+  },
+  text: {
     fontFamily: fonts.families.header,
     fontSize: fonts.sizes.large,
     textAlign: 'center',
@@ -19,4 +24,14 @@ const styles = StyleSheet.create({
   },
 })
 
-export default props => <Text style={styles.text}>{props.children}</Text>
+const HeaderText = (props, context) => (
+  <Text style={[styles.text, styles[context.theme]]}>
+    {props.children}
+  </Text>
+)
+
+HeaderText.contextTypes = {
+  theme: React.PropTypes.string,
+}
+
+export default HeaderText

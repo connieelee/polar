@@ -18,6 +18,8 @@ function loadStories() {
   require('../src/components/Organisms/LoginSignup/LoginInputs/LoginInputs.stories.js');
   require('../src/components/Organisms/LoginSignup/SignupButtons/SignupButtons.stories.js');
   require('../src/components/Organisms/LoginSignup/SignupInputs/SignupInputs.stories.js');
+  require('../src/components/Utilities/Themes/DarkView/DarkView.stories.js');
+  require('../src/components/Utilities/Themes/LightView/LightView.stories.js');
   require('../src/screens/index.stories.js');
   
 }
@@ -36,6 +38,8 @@ const stories = [
   '../src/components/Organisms/LoginSignup/LoginInputs/LoginInputs.stories.js',
   '../src/components/Organisms/LoginSignup/SignupButtons/SignupButtons.stories.js',
   '../src/components/Organisms/LoginSignup/SignupInputs/SignupInputs.stories.js',
+  '../src/components/Utilities/Themes/DarkView/DarkView.stories.js',
+  '../src/components/Utilities/Themes/LightView/LightView.stories.js',
   '../src/screens/index.stories.js',
   
 ];

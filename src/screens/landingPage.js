@@ -9,6 +9,7 @@ import {
 } from 'react-native'
 
 import {
+  DarkView,
   HeaderText,
   SubheaderText,
   PrimaryButton,
@@ -19,15 +20,10 @@ import { width } from '../components/styles';
 
 var styles = StyleSheet.create({
   container: {
-    flex: 1,
-    flexDirection: 'column',
     alignItems: 'center',
     justifyContent: 'space-around',
-    backgroundColor: '#0D3B66',
-    paddingTop: 80,
-    paddingBottom: 80,
-    paddingLeft: 25,
-    paddingRight: 25,
+    paddingVertical: 80,
+    paddingHorizontal: 25,
   },
   buttonGroup: {
     width: width.small,
@@ -88,7 +84,7 @@ export default class LandingPage extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <View style={styles.container}>
+      <DarkView style={styles.container}>
         <Animated.View style={{
           opacity: this.state.title.fadeIn,
           transform: [{translateY: this.state.title.slideUp}],
@@ -106,7 +102,7 @@ export default class LandingPage extends React.Component {
             <SecondaryButton onPress={()=>{ navigate('Login') }}>LOG IN</SecondaryButton>
           </Animated.View>
         </View>
-      </View>
+      </DarkView>
     )
   }
 }
