@@ -10,7 +10,7 @@ import gStyles from '../../../styles'
 const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
-    borderColor: gStyles.colors.primary,
+    borderColor: gStyles.colors.blue,
     paddingVertical: 10,
     flex: 1,
     alignItems: 'center',
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 22,
-    color: gStyles.colors.primary,
+    color: gStyles.colors.blue,
   },
 })
 
