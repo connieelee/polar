@@ -5,12 +5,12 @@ import {
   Text,
 } from 'react-native'
 
-import gStyles from '../../../styles'
+import { colors } from '../../../styles'
 
 const styles = StyleSheet.create({
   button: {
     borderWidth: 2,
-    borderColor: gStyles.colors.primary,
+    borderColor: colors.primary,
     paddingVertical: 10,
     flex: 1,
     alignItems: 'center',
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     fontSize: 22,
-    color: gStyles.colors.primary,
+    color: colors.primary,
   },
 })
 
