@@ -51,7 +51,7 @@ export const putPoll = (pollRef, updatedPoll) =>
     }
   }
 
-export const generateAndPostPoll = () =>
+export const generateAndPostPoll = (question, answers) =>
   async (dispatch) => {
     dispatch(requestPoll())
     const createdPoll = await utilities.createPoll()
