@@ -6,21 +6,35 @@ const palette = {
   midnightBlue: '#0D3B66',
 }
 
-export default {
-  colors: {
-    primary: palette.sapphire,
-    light: palette.whiteSmoke,
-    dark: palette.midnightBlue,
-    accent1: palette.mustard,
-    accent2: palette.orangeSoda,
-  },
-  fonts: {
+export const colors = {
+  primary: palette.sapphire,
+  light: palette.whiteSmoke,
+  dark: palette.midnightBlue,
+  accent1: palette.mustard,
+  accent2: palette.orangeSoda,
+}
+
+export const fonts = {
+  families: {
     header: 'Dosis',
     body: 'Roboto',
   },
-  fontSizes: {
+  sizes: {
     small: 15,
     medium: 25,
     large: 50,
-  },
+  }
+}
+
+export const whiteSpace = {
+  small: 5,
+  medium: 10,
+  large: 20,
+}
+
+export const width = {
+  tiny: 40,
+  small: 275,
+  medium: 300,
+  large: 325,
 }
