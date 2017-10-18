@@ -8,6 +8,11 @@ import {
   TouchableOpacity,
 } from 'react-native'
 
+import {
+  HeaderText,
+  SubheaderText,
+} from '../components'
+
 var styles = StyleSheet.create({
   container:{
     flex: 1,
@@ -19,19 +24,6 @@ var styles = StyleSheet.create({
     paddingBottom: 80,
     paddingLeft: 25,
     paddingRight: 25,
-  },
-  title: {
-    fontSize: 50,
-    fontFamily: 'Dosis',
-    color: '#F4D35E',
-    textAlign: 'center',
-    marginBottom: 20,
-  },
-  description: {
-    fontSize: 25,
-    fontFamily: 'Dosis',
-    color: 'white',
-    textAlign: 'center',
   },
   btn: {
     alignItems: 'center',
@@ -113,10 +105,10 @@ export default class LandingPage extends React.Component {
           opacity: this.state.title.fadeIn,
           transform: [{translateY: this.state.title.slideUp}],
         }}>
-          <Text style={styles.title}>P  O  L  A  R</Text>
-          <Text style={styles.description}>
+          <HeaderText>P  O  L  A  R</HeaderText>
+          <SubheaderText>
             A real-time polling app that helps presenters keep in tune with the audience
-          </Text>
+          </SubheaderText>
         </Animated.View>
         <View>
           <Animated.View style={{opacity: this.state.signup.fadeIn}}>
