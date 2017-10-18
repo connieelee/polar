@@ -14,6 +14,7 @@ function loadStories() {
   require('../src/components/Organisms/LoginSignUp/LoginInputs/LoginInputs.stories.js');
   require('../src/components/Organisms/LoginSignUp/SignupButtons/SignupButtons.stories.js');
   require('../src/components/Organisms/LoginSignUp/SignupInputs/SignupInputs.stories.js');
+  require('../src/screens/index.stories.js');
   
 }
 
@@ -27,6 +28,7 @@ const stories = [
   '../src/components/Organisms/LoginSignUp/LoginInputs/LoginInputs.stories.js',
   '../src/components/Organisms/LoginSignUp/SignupButtons/SignupButtons.stories.js',
   '../src/components/Organisms/LoginSignUp/SignupInputs/SignupInputs.stories.js',
+  '../src/screens/index.stories.js',
   
 ];
 
