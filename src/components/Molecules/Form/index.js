@@ -1,1 +1,5 @@
-export { default as LabelledInput } from './LabelledInput/LabelledInput'
+export { default as LabeledInput } from './LabeledInput/LabeledInput'
+export { default as AddAnswers } from './AddAnswers/AddAnswers'
+export { default as AddedAnswer } from './AddedAnswer/AddedAnswer'
+export { default as ToggleOption } from './ToggleOption/ToggleOption'
+export { default as TextIcon } from './TextIcon/TextIcon'

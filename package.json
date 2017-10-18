@@ -13,9 +13,11 @@
   },
   "dependencies": {
     "firebase": "^4.4.0",
+    "lodash": "^4.17.4",
     "react": "16.0.0-alpha.12",
     "react-native": "0.48.3",
     "react-native-storybook-loader": "^1.5.1",
+    "react-native-vector-icons": "^4.4.2",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
@@ -38,7 +40,9 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src"],
+      "searchDir": [
+        "./src"
+      ],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }

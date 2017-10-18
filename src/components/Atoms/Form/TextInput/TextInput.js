@@ -5,25 +5,28 @@ import {
   View,
 } from 'react-native'
 
-const sideMargin = 10
+import gStyles from '../../../styles'
 
-const styles = StyleSheet.create({
-  textInput: {
-    height: 30,
-    fontSize: 22,
-  },
-  inputContainer: {
-    paddingLeft: sideMargin,
-    paddingRight: sideMargin,
-    width: 300,
-    height: 50,
-    borderBottomWidth: 1,
-    justifyContent: 'center',
-  },
-})
 
-export default props => (
-  <View style={styles.inputContainer}>
-    <TextInput {...props} style={styles.textInput} />
-  </View>
-)
+export default (props) => {
+  const styles = StyleSheet.create({
+    textInput: {
+      height: 30,
+      fontSize: 22,
+    },
+    inputContainer: {
+      paddingLeft: gStyles.whiteSpace.medium,
+      paddingRight: gStyles.whiteSpace.medium,
+      width: props.width || gStyles.width.medium,
+      height: 50,
+      borderBottomWidth: 1,
+      justifyContent: 'center',
+    },
+  })
+
+  return (
+    <View style={styles.inputContainer}>
+      <TextInput {...props} style={styles.textInput} />
+    </View>
+  )
+}
