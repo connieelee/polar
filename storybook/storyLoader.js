@@ -5,6 +5,8 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
+  require('../src/components/Atoms/Buttons/PrimaryButton/PrimaryButton.stories.js');
+  require('../src/components/Atoms/Buttons/SecondaryButton/SecondaryButton.stories.js');
   require('../src/components/Atoms/Form/FormButton/FormButton.stories.js');
   require('../src/components/Atoms/Form/TextInput/TextInput.stories.js');
   require('../src/components/Atoms/Typography/BodyText/BodyText.stories.js');
@@ -21,6 +23,8 @@ function loadStories() {
 }
 
 const stories = [
+  '../src/components/Atoms/Buttons/PrimaryButton/PrimaryButton.stories.js',
+  '../src/components/Atoms/Buttons/SecondaryButton/SecondaryButton.stories.js',
   '../src/components/Atoms/Form/FormButton/FormButton.stories.js',
   '../src/components/Atoms/Form/TextInput/TextInput.stories.js',
   '../src/components/Atoms/Typography/BodyText/BodyText.stories.js',
