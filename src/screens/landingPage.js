@@ -11,10 +11,14 @@ import {
 import {
   HeaderText,
   SubheaderText,
+  PrimaryButton,
+  SecondaryButton,
 } from '../components'
 
+import { width } from '../components/styles';
+
 var styles = StyleSheet.create({
-  container:{
+  container: {
     flex: 1,
     flexDirection: 'column',
     alignItems: 'center',
@@ -25,27 +29,11 @@ var styles = StyleSheet.create({
     paddingLeft: 25,
     paddingRight: 25,
   },
-  btn: {
-    alignItems: 'center',
-    margin: 5,
-    padding: 13,
-    borderRadius: 20,
-    width: 200,
+  buttonGroup: {
+    width: width.small,
+    justifyContent: 'space-between',
+    height: 105,
   },
-  btnText: {
-    fontSize: 20,
-    fontFamily: 'Roboto',
-    color: 'white',
-  },
-  signupBtn: {
-    backgroundColor: '#F95738',
-  },
-  loginBtn: {
-    backgroundColor: 'white',
-  },
-  loginText: {
-    color: 'black',
-  }
 })
 
 export default class LandingPage extends React.Component {
@@ -107,25 +95,15 @@ export default class LandingPage extends React.Component {
         }}>
           <HeaderText>P  O  L  A  R</HeaderText>
           <SubheaderText>
-            A real-time polling app that helps presenters keep in tune with the audience
+            A real-time polling app that helps presenters keep in tune with their audience
           </SubheaderText>
         </Animated.View>
-        <View>
+        <View style={styles.buttonGroup}>
           <Animated.View style={{opacity: this.state.signup.fadeIn}}>
-            <TouchableOpacity
-              onPress={()=>{ navigate('Signup'); }}
-              style={[styles.btn, styles.signupBtn]}
-            >
-              <Text style={[styles.btnText, styles.signupText]}>SIGN UP</Text>
-            </TouchableOpacity>
+            <PrimaryButton onPress={()=>{ navigate('Signup') }}>SIGN UP</PrimaryButton>
           </Animated.View>
           <Animated.View style={{opacity: this.state.login.fadeIn}}>
-            <TouchableOpacity
-              onPress={()=>{ navigate('Login'); }}
-              style={[styles.btn, styles.loginBtn]}
-            >
-              <Text style={[styles.btnText, styles.loginText]}>LOG IN</Text>
-            </TouchableOpacity>
+            <SecondaryButton onPress={()=>{ navigate('Login') }}>LOG IN</SecondaryButton>
           </Animated.View>
         </View>
       </View>

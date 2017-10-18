@@ -5,5 +5,5 @@ import PrimaryButton from './PrimaryButton'
 
 storiesOf('Atoms/Buttons', module)
   .add('PrimaryButton', () => (
-    <PrimaryButton>Click Me!</PrimaryButton>
+    <PrimaryButton>Primary Button</PrimaryButton>
   ))

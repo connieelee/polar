@@ -20,7 +20,7 @@ export const fonts = {
     body: 'Roboto',
   },
   sizes: {
-    small: 15,
+    small: 18,
     medium: 25,
     large: 50,
   }
@@ -34,7 +34,7 @@ export const whiteSpace = {
 
 export const width = {
   tiny: 40,
-  small: 275,
+  small: 250,
   medium: 300,
-  large: 325,
+  large: 350,
 }

@@ -4,9 +4,12 @@ import {
   StyleSheet,
 } from 'react-native'
 
+import { fonts } from '../../../styles'
+
 const styles = StyleSheet.create({
   text: {
-
+    fontFamily: fonts.families.body,
+    fontSize: fonts.sizes.small,
   },
 })
 
