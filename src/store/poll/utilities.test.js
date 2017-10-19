@@ -39,5 +39,35 @@ describe('Utilities', () => {
       expect(typeof key).toBe('string')
     })
   })
+
+  describe('generatePollToPush', () => {
+    test('generates the approriate object', () => {
+      const key = '1111'
+      const question = 'Dinner?'
+      const answers = [
+        'yes',
+        'no',
+      ]
+      expect(utilities.generatePollToPush(key, question, answers))
+        .toMatchObject({
+          [key]: {
+            options: {
+              [answers[0]]: 0,
+              [answers[1]]: 0,
+            },
+            open: false,
+            option0: {
+              text: answers[0],
+            },
+            option1: {
+              text: 'no',
+            },
+          },
+        })
+      expect(utilities.generatePollToPush(key, question, answers)[key].endTime)
+        .toBeCloseTo(Date.now() + (15 * 60 * 1000), 1)
+
+    })
+  })
 })
 

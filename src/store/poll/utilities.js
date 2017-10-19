@@ -31,7 +31,7 @@ const generateDefaultOptions = (delayMin = 15, open = false) => ({
   open,
 })
 
-const generatePollToPush = (key, question, answers) => {
+export const generatePollToPush = (key, question, answers) => {
   const optionsObj = answers.reduce((accum, curVal) => Object.assign(accum, { [curVal]: 0 }), {})
   const expandedOptionsObj = answers.reduce((accum, curVal, index) =>
     Object.assign(
@@ -46,7 +46,7 @@ const generatePollToPush = (key, question, answers) => {
     [key]: Object.assign(
       generateDefaultOptions(),
       { options: optionsObj },
-      expandedOptionsObj(),
+      expandedOptionsObj,
     ),
   }
 }
