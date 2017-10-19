@@ -1,1 +1,1 @@
-export * from './LoginSignUp'
+export * from './LoginSignup'

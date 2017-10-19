@@ -12,10 +12,12 @@
     "prestorybook": "rnstl"
   },
   "dependencies": {
+    "eslint": "^4.9.0",
     "firebase": "^4.4.0",
     "react": "16.0.0-alpha.12",
     "react-native": "0.48.3",
     "react-native-storybook-loader": "^1.5.1",
+    "react-navigation": "^1.0.0-beta.13",
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
@@ -38,9 +40,18 @@
   },
   "config": {
     "react-native-storybook-loader": {
-      "searchDir": ["./src"],
+      "searchDir": [
+        "./src"
+      ],
       "pattern": "**/*.stories.js",
       "outputFile": "./storybook/storyLoader.js"
     }
+  },
+  "rnpm": {
+    "assets": [
+      "./assets/fonts/Dosis",
+      "./assets/fonts/Josefin_Slab",
+      "./assets/fonts/Roboto"
+    ]
   }
 }
