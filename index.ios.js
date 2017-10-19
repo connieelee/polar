@@ -4,7 +4,8 @@ import { AppRegistry, Text, View } from 'react-native';
 import {
   landingPage,
   login,
+  poll,
 } from './src/screens'
 
 
-AppRegistry.registerComponent('polar', () => login);
+AppRegistry.registerComponent('polar', () => poll);
