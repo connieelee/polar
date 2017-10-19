@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 
 import {
-  DarkView,
+  ThemedView,
   HeaderText,
   SubheaderText,
   PrimaryButton,
@@ -84,7 +84,7 @@ export default class LandingPage extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <DarkView style={styles.container}>
+      <ThemedView theme="dark" style={styles.container}>
         <Animated.View style={{
           opacity: this.state.title.fadeIn,
           transform: [{translateY: this.state.title.slideUp}],
@@ -102,7 +102,7 @@ export default class LandingPage extends React.Component {
             <SecondaryButton onPress={()=>{ navigate('Login') }}>LOG IN</SecondaryButton>
           </Animated.View>
         </View>
-      </DarkView>
+      </ThemedView>
     )
   }
 }
