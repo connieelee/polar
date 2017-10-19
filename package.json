@@ -12,6 +12,7 @@
     "prestorybook": "rnstl"
   },
   "dependencies": {
+    "eslint": "^4.9.0",
     "firebase": "^4.4.0",
     "react": "16.0.0-alpha.12",
     "react-native": "0.48.3",

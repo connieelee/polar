@@ -11,25 +11,36 @@ import {
 } from '../../../styles';
 
 const styles = StyleSheet.create({
-  button: {
+  btn: {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
     paddingVertical: 13,
     marginHorizontal: 10,
+  },
+  darkBtn: {
     backgroundColor: colors.accent2,
   },
-  buttonText: {
+  lightBtn: {
+    backgroundColor: colors.primary,
+  },
+  btnText: {
     fontSize: fonts.sizes.small,
     fontFamily: fonts.families.body,
     color: colors.light,
-  }
+  },
 })
 
-export default props => (
-  <TouchableOpacity style={styles.button} onPress={props.onPress}>
-    <Text style={styles.buttonText}>
+const PrimaryButton = (props, context) => (
+  <TouchableOpacity style={[styles.btn, styles[`${context.theme}Btn`]]} onPress={props.onPress}>
+    <Text style={styles.btnText}>
       {props.children}
     </Text>
   </TouchableOpacity>
 )
+
+PrimaryButton.contextTypes = {
+  theme: React.PropTypes.string,
+}
+
+export default PrimaryButton

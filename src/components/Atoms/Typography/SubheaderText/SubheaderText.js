@@ -12,7 +12,6 @@ import {
 const styles = StyleSheet.create({
   dark: {
     color: colors.light,
-
   },
   light: {
     color: colors.primary,
