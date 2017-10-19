@@ -31,14 +31,31 @@ const generateDefaultOptions = (delayMin = 15, open = false) => ({
   open,
 })
 
+export const generatePollToPush = (key, question, answers) => {
+  const optionsObj = answers.reduce((accum, curVal) => Object.assign(accum, { [curVal]: 0 }), {})
+  const expandedOptionsObj = answers.reduce((accum, curVal, index) =>
+    Object.assign(
+      accum,
+      {
+        [`option${index}`]: {
+          text: curVal,
+        },
+      },
+    ), {})
+  return {
+    [key]: Object.assign(
+      generateDefaultOptions(),
+      { options: optionsObj },
+      expandedOptionsObj,
+    ),
+  }
+}
+
 export default {
-  createPoll: async () => {
+  createPoll: async (question, answers) => {
     try {
       const key = await getKey()
-      const toPush = {
-        [key]: generateDefaultOptions(),
-      }
-      return await database.ref('/polls').update(toPush)
+      return await database.ref('/polls').update(generatePollToPush(key, question, answers))
     } catch (error) {
       return error
     }
