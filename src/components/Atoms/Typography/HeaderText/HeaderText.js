@@ -10,23 +10,23 @@ import {
 } from '../../../styles';
 
 const styles = StyleSheet.create({
-  dark: {
-    color: colors.accent1,
-  },
-  light: {
-    color: colors.accent2,
-  },
   text: {
     fontFamily: fonts.families.header,
     fontSize: fonts.sizes.large,
     textAlign: 'center',
     marginBottom: 20,
   },
+  dark: {
+    color: colors.accent1,
+  },
+  light: {
+    color: colors.accent2,
+  },
 })
 
-const HeaderText = (props, context) => (
-  <Text style={[styles.text, styles[context.theme]]}>
-    {props.children}
+const HeaderText = ({ children }, { theme }) => (
+  <Text style={[styles.text, styles[theme]]}>
+    {children}
   </Text>
 )
 

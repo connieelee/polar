@@ -10,22 +10,22 @@ import {
 } from '../../../styles';
 
 const styles = StyleSheet.create({
+  text: {
+    fontFamily: fonts.families.header,
+    fontSize: fonts.sizes.medium,
+    textAlign: 'center',
+  },
   dark: {
     color: colors.light,
   },
   light: {
     color: colors.primary,
   },
-  text: {
-    fontFamily: fonts.families.header,
-    fontSize: fonts.sizes.medium,
-    textAlign: 'center',
-  },
 })
 
-const SubheaderText = (props, context) => (
-  <Text style={[styles.text, styles[context.theme]]}>
-    {props.children}
+const SubheaderText = ({ children }, { theme }) => (
+  <Text style={[styles.text, styles[theme]]}>
+    {children}
   </Text>
 )
 

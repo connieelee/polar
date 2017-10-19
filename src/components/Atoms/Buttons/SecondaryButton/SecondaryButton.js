@@ -18,23 +18,23 @@ const styles = StyleSheet.create({
     paddingVertical: 13,
     marginHorizontal: 10,
   },
+  btnText: {
+    fontSize: fonts.sizes.small,
+    fontFamily: fonts.families.body,
+    color: colors.primary,
+  },
   darkBtn: {
     backgroundColor: colors.light,
   },
   lightBtn: {
     backgroundColor: colors.accent1,
   },
-  btnText: {
-    fontSize: fonts.sizes.small,
-    fontFamily: fonts.families.body,
-    color: colors.primary,
-  }
 })
 
-const SecondaryButton = (props, context) => (
-  <TouchableOpacity style={[styles.btn, styles[`${context.theme}Btn`]]} onPress={props.onPress}>
+const SecondaryButton = ({ onPress, children }, { theme }) => (
+  <TouchableOpacity style={[styles.btn, styles[`${theme}Btn`]]} onPress={onPress}>
     <Text style={styles.btnText}>
-      {props.children}
+      {children}
     </Text>
   </TouchableOpacity>
 )
