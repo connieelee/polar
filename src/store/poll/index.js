@@ -66,10 +66,27 @@ export const generateAndPostPoll = () =>
     }
   }
 
-export const subscribePoll = key =>
+export const subscribeToPoll = key =>
   async (dispatch) => {
-
+    try {
+      const dbRef = database.ref(`/polls/${key}`)
+      dispatch(subscribePoll())
+      dbRef.on('value', (snapshot) => {
+        dispatch(updatePoll(snapshot.val()))
+      })
+      return dbRef
+    } catch (error) {
+      dispatch(pollError(error))
+      return error
+    }
   }
+
+export const unsubscribeFromPoll = ref =>
+  (dispatch) => {
+    ref.off()
+    dispatch(unsubscribePoll())
+  }
+
 export default (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_POLL:

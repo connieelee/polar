@@ -43,7 +43,4 @@ export default {
       return error
     }
   },
-  subscribeToPoll: async (key) => {
-
-  },
 }
