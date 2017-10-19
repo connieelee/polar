@@ -1,8 +1,8 @@
 import { database } from '../../../firebase'
 import utilities from './utilities'
 
-const defaultState = { loading: false }
-const loadingState = { loading: true }
+const defaultState = { loading: false, subscribed: false }
+const loadingState = { loading: true, subscribed: false }
 
 const CREATE_POLL = 'CREATE_POLL'
 const READ_POLL = 'READ_POLL'
@@ -10,6 +10,8 @@ const UPDATE_POLL = 'UPDATE_POLL'
 const DELETE_POLL = 'DELETE_POLL'
 const REQUEST_POLL = 'REQUEST_POLL'
 const POLL_ERROR = 'POLL_ERROR'
+const SUBSCRIBE_POLL = 'SUBSCRIBE_POLL'
+const UNSUBSCRIBE_POLL = 'UNSUBSCRIBE_POLL'
 
 export const createPoll = poll => ({ type: CREATE_POLL, poll })
 export const readPoll = poll => ({ type: READ_POLL, poll })
@@ -17,6 +19,8 @@ export const updatePoll = poll => ({ type: UPDATE_POLL, poll })
 export const deletePoll = () => ({ type: DELETE_POLL })
 export const requestPoll = () => ({ type: REQUEST_POLL })
 export const pollError = error => ({ type: POLL_ERROR, error })
+export const subscribePoll = () => ({ type: SUBSCRIBE_POLL })
+export const unsubscribePoll = () => ({ type: UNSUBSCRIBE_POLL })
 
 export const getPoll = pollId =>
   async (dispatch) => {
@@ -66,6 +70,11 @@ export const joinExistingPoll = key =>
   async (dispatch) => {
     dispatch(requestPoll())
   }
+
+export const subscribePoll = key =>
+  async (dispatch) => {
+
+  }
 export default (state = defaultState, action) => {
   switch (action.type) {
     case CREATE_POLL:
@@ -78,6 +87,10 @@ export default (state = defaultState, action) => {
       return loadingState
     case POLL_ERROR:
       return action.error
+    case SUBSCRIBE_POLL:
+      return Object.assign(state, { subscribed: true })
+    case UNSUBSCRIBE_POLL:
+      return Object.assign(state, { subscribed: false })
     default:
       return state
   }
