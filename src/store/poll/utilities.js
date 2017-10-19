@@ -43,4 +43,11 @@ export default {
       return error
     }
   },
+  joinPoll: async (key) => {
+    try {
+      return await database.ref(`/polls${key}`)
+    } catch (error) {
+      return error
+    }
+  }
 }
