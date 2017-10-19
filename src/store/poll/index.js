@@ -66,11 +66,6 @@ export const generateAndPostPoll = () =>
     }
   }
 
-export const joinExistingPoll = key =>
-  async (dispatch) => {
-    dispatch(requestPoll())
-  }
-
 export const subscribePoll = key =>
   async (dispatch) => {
 
