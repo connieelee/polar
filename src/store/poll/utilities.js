@@ -45,9 +45,12 @@ export default {
   },
   joinPoll: async (key) => {
     try {
-      return await database.ref(`/polls${key}`)
+      return await database.ref(`/polls${key}`).once('value')
     } catch (error) {
       return error
     }
-  }
+  },
+  subscribeToPoll: async(key) => {
+
+  },
 }
