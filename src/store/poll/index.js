@@ -1,12 +1,13 @@
 import { database } from '../../../firebase'
 import utilities from './utilities'
 
-const defaultState = { loading: false, subscribed: false, error: '' }
+const defaultState = { loading: false, subscribed: false, error: '', ref: null }
 
 const CREATE_POLL = 'CREATE_POLL'
 const READ_POLL = 'READ_POLL'
 const UPDATE_POLL = 'UPDATE_POLL'
 const DELETE_POLL = 'DELETE_POLL'
+const REF_POLL = 'REF_POLL'
 const REQUEST_POLL = 'REQUEST_POLL'
 const REQUEST_COMPLETED = 'REQUEST_COMPLETED'
 const POLL_ERROR = 'POLL_ERROR'
@@ -17,6 +18,7 @@ export const createPoll = poll => ({ type: CREATE_POLL, poll })
 export const readPoll = poll => ({ type: READ_POLL, poll })
 export const updatePoll = poll => ({ type: UPDATE_POLL, poll })
 export const deletePoll = () => ({ type: DELETE_POLL })
+export const refPoll = ref => ({ type: REF_POLL, ref })
 export const requestPoll = () => ({ type: REQUEST_POLL })
 export const requestCompleted = () => ({ type: REQUEST_COMPLETED })
 export const pollError = error => ({ type: POLL_ERROR, error })
@@ -85,6 +87,14 @@ export const subscribeToPoll = key =>
     }
   }
 
+export const voteOnPoll = choice =>
+  async (dispatch) => {
+    try {
+
+    } catch (error) {
+
+    }
+  }
 export const unsubscribeFromPoll = ref =>
   (dispatch) => {
     ref.off()
@@ -99,6 +109,8 @@ export default (state = defaultState, action) => {
       return Object.assign(state, action.poll)
     case DELETE_POLL:
       return defaultState
+    case REF_POLL:
+      return Object.assign(state, { ref: action.ref })
     case REQUEST_POLL:
       return Object.assign(state, { loading: true })
     case REQUEST_COMPLETED:
