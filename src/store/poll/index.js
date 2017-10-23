@@ -1,8 +1,7 @@
 import { database } from '../../../firebase'
 import utilities from './utilities'
 
-const defaultState = { loading: false, subscribed: false }
-const loadingState = { loading: true, subscribed: false }
+const defaultState = { loading: false, subscribed: false, error: '' }
 
 const CREATE_POLL = 'CREATE_POLL'
 const READ_POLL = 'READ_POLL'
@@ -101,11 +100,11 @@ export default (state = defaultState, action) => {
     case DELETE_POLL:
       return defaultState
     case REQUEST_POLL:
-      return Object.assign(state, loadingState)
+      return Object.assign(state, { loading: true })
     case REQUEST_COMPLETED:
       return Object.assign(state, { loading: false })
     case POLL_ERROR:
-      return action.error
+      return Object.assign(state, { error: action.error })
     case SUBSCRIBE_POLL:
       return Object.assign(state, { subscribed: true })
     case UNSUBSCRIBE_POLL:
