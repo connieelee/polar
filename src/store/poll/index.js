@@ -29,8 +29,10 @@ export const getPoll = pollId =>
   async (dispatch) => {
     dispatch(requestPoll())
     try {
-      const pollSnap = await database.ref(`/polls/${pollId}`).once('value')
+      const pollRef = database.ref(`/polls/${pollId}`)
+      const pollSnap = await pollRef.once('value')
       const pollVal = pollSnap.val()
+      dispatch(refPoll(pollRef))
       dispatch(readPoll(pollVal))
     } catch (error) {
       dispatch(pollError(error))
@@ -87,14 +89,6 @@ export const subscribeToPoll = key =>
     }
   }
 
-export const voteOnPoll = choice =>
-  async (dispatch) => {
-    try {
-
-    } catch (error) {
-
-    }
-  }
 export const unsubscribeFromPoll = ref =>
   (dispatch) => {
     ref.off()
